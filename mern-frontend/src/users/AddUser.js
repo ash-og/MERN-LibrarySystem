@@ -1,18 +1,18 @@
 import React, {useState} from 'react';
 
 const AddUser = () => {
-    const [name, setName] = useState('');
-    const [age, setAge] = useState(0);
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState(0);
     const [statusMessage, setStatusMessage] = useState('');
 
-    const handleNameFieldChange = (event) => {
+    const handleUsernameFieldChange = (event) => {
         event.preventDefault();
-        setName(event.target.value);
+        setUsername(event.target.value);
     }
 
-    const handleAgeFieldChange = (event) => {
+    const handleEmailFieldChange = (event) => {
         event.preventDefault();
-        setAge(event.target.value);
+        setEmail(event.target.value);
     }
 
     const handleCreateUser = async (event) => {
@@ -20,8 +20,8 @@ const AddUser = () => {
         setStatusMessage('');
 
         let user = {
-            'name': name,
-            'age': age
+            'username': username,
+            'email': email
         };
 
         try {
@@ -35,7 +35,7 @@ const AddUser = () => {
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
-                    setStatusMessage('User ' + user.name + ' created');
+                    setStatusMessage('User ' + user.username + ' created');
                 });
         } catch (err) {
             // Remediation logic
@@ -46,24 +46,24 @@ const AddUser = () => {
     return(
         <div className="flex flex-col items-center justify-center">
             <div className="lg:w-1/5 md:w-2/5 w-2/5">
-                <label className="mt-6">Name</label>
+                <label className="mt-6">Username</label>
                 <input
                     type="text"
                     className="mt-1 w-full rounded-md border-gray-300 shadow-sm"
                     placeholder=""
-                    value={name}
-                    onChange={(e) => handleNameFieldChange(e)}
+                    value={username}
+                    onChange={(e) => handleUsernameFieldChange(e)}
                 />
-                <label className="mt-6">Age</label>
+                <label className="mt-6">Email</label>
                 <input
                     type="text"
                     className="mt-1 w-full rounded-xl border-gray-300 shadow-sm"
                     placeholder=""
-                    value={age}
-                    onChange={(e) => handleAgeFieldChange(e)}
+                    value={email}
+                    onChange={(e) => handleEmailFieldChange(e)}
                 />
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleCreateUser}>
-                    Create User
+                    Register
                 </button>
                 <p className="text-red-900">
                     { statusMessage }

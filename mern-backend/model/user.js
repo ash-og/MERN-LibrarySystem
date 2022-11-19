@@ -3,12 +3,11 @@ var Schema = mongoose.Schema;
 
 // Define a schema.
 var userSchema = new Schema({
-  username: { type: String, required: true },
-  email: { type: String, required: true },
-  bio: String,
-  image: String,
-  hash: { type: String, required: true },
-  salt: String
+  username: String,
+  email: String,
+  // image: String,
+  // hash: String,
+  // salt: String
 }, {timestamps: true});
 
 // Create a model.

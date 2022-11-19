@@ -24,7 +24,7 @@ const SearchUser = () => {
         
 
         try {
-            fetch(`http://localhost:3100/users?name=${searchQuery}`)
+            fetch(`http://localhost:3100/books?title=${searchQuery}`)
                 .then(response => response.json())
                 .then(data => {
                     setSearchResults(data);

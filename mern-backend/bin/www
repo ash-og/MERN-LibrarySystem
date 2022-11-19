@@ -9,7 +9,7 @@ var debug = require('debug')('mongodbnode:server');
 var http = require('http');
 var mongoose = require('mongoose');
 
-var mongoDB = 'mongodb+srv://aislingy:aislingy@cluster0.zb7d8zf.mongodb.net/?retryWrites=true&w=majority';
+var mongoDB = 'mongodb+srv://aislingy:aislingy@cluster0.zb7d8zf.mongodb.net/library?retryWrites=true&w=majority';
 mongoose.connect(mongoDB);
 
 //Get the default connection
