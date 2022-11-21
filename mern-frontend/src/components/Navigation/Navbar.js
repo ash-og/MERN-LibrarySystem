@@ -5,10 +5,11 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 // Code from Tailwind
 
 const navigation = [
-  { name: 'Home', href: '#', current: true },
-  { name: 'About', href: '#', current: false },
-  { name: 'Search', href: '#', current: false },
-  { name: 'Sign Up', href: '#', current: false },
+  { name: 'Home', href: '/Home', current: true },
+  { name: 'About', href: '/About', current: false },
+  { name: 'Search', href: '/Search', current: false },
+  { name: 'Login', href: '/Login', current: false },
+  { name: 'Sign Up', href: '/SignUp', current: false },
 ]
 
 function classNames(...classes) {

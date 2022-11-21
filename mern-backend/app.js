@@ -27,6 +27,23 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+// Testing user 
+
+// const User = require('./model/user');
+
+// const userInput = {
+//   username: "testPerson1234",
+//   email: "testPerson@email.com",
+//   password: "1234567"
+// }
+
+// const user = new User(userInput);
+// user.save((err,document)=>{
+//   if(err)
+//     console.log(err);
+//   console.log(document);
+// });
+
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
