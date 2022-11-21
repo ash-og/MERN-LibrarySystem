@@ -1,0 +1,688 @@
+[
+ {
+   "title": "Da Vinci Code,The",
+   "author": "Brown, Dan",
+   "genre": "F2.1 Crime, Thriller & Adventure",
+   "publisher": "Transworld Grp",
+   "releasedate": "Monday, March 1, 2004"
+ },
+ {
+   "title": "Harry Potter and the Deathly Hallows",
+   "author": "Rowling, J.K.",
+   "genre": "Y2.1 Children's Fiction",
+   "publisher": "Bloomsbury Grp",
+   "releasedate": "Saturday, July 21, 2007"
+ },
+ {
+   "title": "Harry Potter and the Philosopher's Stone",
+   "author": "Rowling, J.K.",
+   "genre": "Y2.1 Children's Fiction",
+   "publisher": "Bloomsbury Grp",
+   "releasedate": "Thursday, June 26, 1997"
+ },
+ {
+   "title": "Harry Potter and the Order of the Phoenix",
+   "author": "Rowling, J.K.",
+   "genre": "Y2.1 Children's Fiction",
+   "publisher": "Bloomsbury Grp",
+   "releasedate": "Saturday, April 26, 2003"
+ },
+ {
+   "title": "Fifty Shades of Grey",
+   "author": "James, E. L.",
+   "genre": "F2.5 Romance & Sagas",
+   "publisher": "Random House Grp",
+   "releasedate": "Thursday, April 12, 2012"
+ },
+ {
+   "title": "Harry Potter and the Goblet of Fire",
+   "author": "Rowling, J.K.",
+   "genre": "Y2.1 Children's Fiction",
+   "publisher": "Bloomsbury Grp",
+   "releasedate": "Saturday, March 24, 2001"
+ },
+ {
+   "title": "Harry Potter and the Chamber of Secrets",
+   "author": "Rowling, J.K.",
+   "genre": "Y2.1 Children's Fiction",
+   "publisher": "Bloomsbury Grp",
+   "releasedate": "Saturday, January 2, 1999"
+ },
+ {
+   "title": "Harry Potter and the Prisoner of Azkaban",
+   "author": "Rowling, J.K.",
+   "genre": "Y2.1 Children's Fiction",
+   "publisher": "Bloomsbury Grp",
+   "releasedate": "Saturday, April 1, 2000"
+ },
+ {
+   "title": "Angels and Demons",
+   "author": "Brown, Dan",
+   "genre": "F2.1 Crime, Thriller & Adventure",
+   "publisher": "Transworld Grp",
+   "releasedate": "Tuesday, July 1, 2003"
+ },
+ {
+   "title": "Harry Potter and the Half-blood Prince:Children's Edition",
+   "author": "Rowling, J.K.",
+   "genre": "Y2.1 Children's Fiction",
+   "publisher": "Bloomsbury Grp",
+   "releasedate": "Saturday, April 9, 2005"
+ },
+ {
+   "title": "Fifty Shades Darker",
+   "author": "James, E. L.",
+   "genre": "F2.5 Romance & Sagas",
+   "publisher": "Random House Grp",
+   "releasedate": "Thursday, April 26, 2012"
+ },
+ {
+   "title": "Twilight",
+   "author": "Meyer, Stephenie",
+   "genre": "Y2.2 Young Adult Fiction",
+   "publisher": "Little, Brown Book Grp",
+   "releasedate": "Saturday, December 9, 2006"
+ },
+ {
+   "title": "Girl with the Dragon Tattoo,The:Millennium Trilogy",
+   "author": "Larsson, Stieg",
+   "genre": "F2.1 Crime, Thriller & Adventure",
+   "publisher": "Quercus Grp",
+   "releasedate": "Thursday, July 24, 2008"
+ },
+ {
+   "title": "Fifty Shades Freed",
+   "author": "James, E. L.",
+   "genre": "F2.5 Romance & Sagas",
+   "publisher": "Random House Grp",
+   "releasedate": "Thursday, April 26, 2012"
+ },
+ {
+   "title": "Lost Symbol,The",
+   "author": "Brown, Dan",
+   "genre": "F2.1 Crime, Thriller & Adventure",
+   "publisher": "Transworld Grp",
+   "releasedate": "Saturday, April 25, 2009"
+ },
+ {
+   "title": "New Moon",
+   "author": "Meyer, Stephenie",
+   "genre": "Y2.2 Young Adult Fiction",
+   "publisher": "Little, Brown Book Grp",
+   "releasedate": "Thursday, September 6, 2007"
+ },
+ {
+   "title": "Deception Point",
+   "author": "Brown, Dan",
+   "genre": "F2.1 Crime, Thriller & Adventure",
+   "publisher": "Transworld Grp",
+   "releasedate": "Saturday, May 1, 2004"
+ },
+ {
+   "title": "Eclipse",
+   "author": "Meyer, Stephenie",
+   "genre": "Y2.2 Young Adult Fiction",
+   "publisher": "Little, Brown Book Grp",
+   "releasedate": "Friday, June 27, 2008"
+ },
+ {
+   "title": "Lovely Bones,The",
+   "author": "Sebold, Alice",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Pan Macmillan Grp",
+   "releasedate": "Friday, June 6, 2003"
+ },
+ {
+   "title": "Curious Incident of the Dog in the Night-time,The",
+   "author": "Haddon, Mark",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Random House Grp",
+   "releasedate": "Thursday, April 1, 2004"
+ },
+ {
+   "title": "Digital Fortress",
+   "author": "Brown, Dan",
+   "genre": "F2.1 Crime, Thriller & Adventure",
+   "publisher": "Transworld Grp",
+   "releasedate": "Friday, March 5, 2004"
+ },
+ {
+   "title": "Short History of Nearly Everything,A",
+   "author": "Bryson, Bill",
+   "genre": "T8.0 Popular Science",
+   "publisher": "Transworld Grp",
+   "releasedate": "Tuesday, June 1, 2004"
+ },
+ {
+   "title": "Girl Who Played with Fire,The:Millennium Trilogy",
+   "author": "Larsson, Stieg",
+   "genre": "F2.1 Crime, Thriller & Adventure",
+   "publisher": "Quercus Grp",
+   "releasedate": "Thursday, July 9, 2009"
+ },
+ {
+   "title": "Breaking Dawn",
+   "author": "Meyer, Stephenie",
+   "genre": "Y2.2 Young Adult Fiction",
+   "publisher": "Little, Brown Book Grp",
+   "releasedate": "Saturday, May 24, 2008"
+ },
+ {
+   "title": "Very Hungry Caterpillar,The:The Very Hungry Caterpillar",
+   "author": "Carle, Eric",
+   "genre": "Y1.3 Picture Books",
+   "publisher": "Penguin Grp",
+   "releasedate": "Thursday, September 29, 1994"
+ },
+ {
+   "title": "Gruffalo,The",
+   "author": "Donaldson, Julia",
+   "genre": "Y1.3 Picture Books",
+   "publisher": "Pan Macmillan Grp",
+   "releasedate": "Saturday, August 21, 1999"
+ },
+ {
+   "title": "Jamie's 30-Minute Meals",
+   "author": "Oliver, Jamie",
+   "genre": "T16.0 Food & Drink: General",
+   "publisher": "Penguin Grp",
+   "releasedate": "Thursday, September 30, 2010"
+ },
+ {
+   "title": "Kite Runner,The",
+   "author": "Hosseini, Khaled",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Bloomsbury Grp",
+   "releasedate": "Saturday, April 17, 2004"
+ },
+ {
+   "title": "One Day",
+   "author": "Nicholls, David",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Hodder & Stoughton Grp",
+   "releasedate": "Thursday, February 4, 2010"
+ },
+ {
+   "title": "Thousand Splendid Suns,A",
+   "author": "Hosseini, Khaled",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Bloomsbury Grp",
+   "releasedate": "Tuesday, May 22, 2007"
+ },
+ {
+   "title": "Girl Who Kicked the Hornets' Nest,The:Millennium Trilogy",
+   "author": "Larsson, Stieg",
+   "genre": "F2.1 Crime, Thriller & Adventure",
+   "publisher": "Quercus Grp",
+   "releasedate": " 2005\""
+ },
+ {
+   "title": "Time Traveler's Wife,The",
+   "author": "Niffenegger, Audrey",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Random House Grp",
+   "releasedate": "Saturday, May 29, 2004"
+ },
+ {
+   "title": "Atonement",
+   "author": "McEwan, Ian",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Random House Grp",
+   "releasedate": "Thursday, May 2, 2002"
+ },
+ {
+   "title": "Bridget Jones's Diary:A Novel",
+   "author": "Fielding, Helen",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Pan Macmillan Grp",
+   "releasedate": "Friday, June 20, 1997"
+ },
+ {
+   "title": "World According to Clarkson,The",
+   "author": "Clarkson, Jeremy",
+   "genre": "T13.0 Humour: Collections & General",
+   "publisher": "Penguin Grp",
+   "releasedate": "Thursday, May 26, 2005"
+ },
+ {
+   "title": "Captain Corelli's Mandolin",
+   "author": "Bernieres, Louis de",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Random House Grp",
+   "releasedate": "Thursday, June 1, 1995"
+ },
+ {
+   "title": "Sound of Laughter,The",
+   "author": "Kay, Peter",
+   "genre": "T4.0A Autobiography: General",
+   "publisher": "Random House Grp",
+   "releasedate": "Thursday, October 5, 2006"
+ },
+ {
+   "title": "Life of Pi",
+   "author": "Martel, Yann",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Canongate Grp",
+   "releasedate": "Saturday, May 17, 2003"
+ },
+ {
+   "title": "Billy Connolly",
+   "author": "Stephenson, Pamela",
+   "genre": "T4.1 Biography: The Arts",
+   "publisher": "HarperCollins Grp",
+   "releasedate": "Saturday, June 29, 2002"
+ },
+ {
+   "title": "Child Called It,A",
+   "author": "Pelzer, Dave",
+   "genre": "T4.0A Autobiography: General",
+   "publisher": "Orion Grp",
+   "releasedate": "Thursday, January 4, 2001"
+ },
+ {
+   "title": "Gruffalo's Child,The",
+   "author": "Donaldson, Julia",
+   "genre": "Y1.3 Picture Books",
+   "publisher": "Pan Macmillan Grp",
+   "releasedate": "Friday, September 2, 2005"
+ },
+ {
+   "title": "Angela's Ashes:A Memoir of a Childhood",
+   "author": "McCourt, Frank",
+   "genre": "T4.0A Autobiography: General",
+   "publisher": "HarperCollins Grp",
+   "releasedate": "Tuesday, May 6, 1997"
+ },
+ {
+   "title": "Birdsong",
+   "author": "Faulks, Sebastian",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Random House Grp",
+   "releasedate": "Monday, July 18, 1994"
+ },
+ {
+   "title": "Northern Lights:His Dark Materials S.",
+   "author": "Pullman, Philip",
+   "genre": "Y2.2 Young Adult Fiction",
+   "publisher": "Scholastic Ltd. Grp",
+   "releasedate": "Friday, October 23, 1998"
+ },
+ {
+   "title": "Labyrinth",
+   "author": "Mosse, Kate",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Orion Grp",
+   "releasedate": "Saturday, July 16, 2005"
+ },
+ {
+   "title": "Harry Potter and the Half-blood Prince",
+   "author": "Rowling, J.K.",
+   "genre": "F2.2 Science Fiction & Fantasy",
+   "publisher": "Bloomsbury Grp",
+   "releasedate": "Saturday, April 9, 2005"
+ },
+ {
+   "title": "Help,The",
+   "author": "Stockett, Kathryn",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Penguin Grp",
+   "releasedate": "Thursday, May 13, 2010"
+ },
+ {
+   "title": "Man and Boy",
+   "author": "Parsons, Tony",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "HarperCollins Grp",
+   "releasedate": "Monday, March 6, 2000"
+ },
+ {
+   "title": "Memoirs of a Geisha",
+   "author": "Golden, Arthur",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Random House Grp",
+   "releasedate": "Thursday, June 4, 1998"
+ },
+ {
+   "title": "No.1 Ladies' Detective Agency,The:No.1 Ladies' Detective Agency S.",
+   "author": "McCall Smith, Alexander",
+   "genre": "F2.1 Crime, Thriller & Adventure",
+   "publisher": "Little, Brown Book Grp",
+   "releasedate": "Thursday, June 5, 2003"
+ },
+ {
+   "title": "Island,The",
+   "author": "Hislop, Victoria",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Headline Grp",
+   "releasedate": "Monday, April 10, 2006"
+ },
+ {
+   "title": "PS, I Love You",
+   "author": "Ahern, Cecelia",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "HarperCollins Grp",
+   "releasedate": "Saturday, March 27, 2004"
+ },
+ {
+   "title": "You are What You Eat:The Plan That Will Change Your Life",
+   "author": "McKeith, Gillian",
+   "genre": "T9.4 Fitness & Diet",
+   "publisher": "Penguin Grp",
+   "releasedate": "Thursday, June 17, 2004"
+ },
+ {
+   "title": "Shadow of the Wind,The",
+   "author": "Zafon, Carlos Ruiz",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Orion Grp",
+   "releasedate": "Wednesday, October 5, 2005"
+ },
+ {
+   "title": "Tales of Beedle the Bard,The",
+   "author": "Rowling, J.K.",
+   "genre": "Y2.1 Children's Fiction",
+   "publisher": "Bloomsbury Grp",
+   "releasedate": "Saturday, August 2, 2008"
+ },
+ {
+   "title": "Broker,The",
+   "author": "Grisham, John",
+   "genre": "F2.1 Crime, Thriller & Adventure",
+   "publisher": "Random House Grp",
+   "releasedate": "Saturday, August 27, 2005"
+ },
+ {
+   "title": "Subtle Knife,The:His Dark Materials S.",
+   "author": "Pullman, Philip",
+   "genre": "Y2.2 Young Adult Fiction",
+   "publisher": "Scholastic Ltd. Grp",
+   "releasedate": "Friday, October 16, 1998"
+ },
+ {
+   "title": "Delia's How to Cook:(Bk.1)",
+   "author": "Smith, Delia",
+   "genre": "T16.0 Food & Drink: General",
+   "publisher": "Random House Grp",
+   "releasedate": "Monday, October 12, 1998"
+ },
+ {
+   "title": "Chocolat",
+   "author": "Harris, Joanne",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Transworld Grp",
+   "releasedate": "Thursday, March 2, 2000"
+ },
+ {
+   "title": "Boy in the Striped Pyjamas,The",
+   "author": "Boyne, John",
+   "genre": "Y2.2 Young Adult Fiction",
+   "publisher": "Random House Childrens Books G",
+   "releasedate": "Thursday, September 11, 2008"
+ },
+ {
+   "title": "My Sister's Keeper",
+   "author": "Picoult, Jodi",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Hodder & Stoughton Grp",
+   "releasedate": "Saturday, June 19, 2004"
+ },
+ {
+   "title": "Amber Spyglass,The:His Dark Materials S.",
+   "author": "Pullman, Philip",
+   "genre": "Y2.2 Young Adult Fiction",
+   "publisher": "Scholastic Ltd. Grp",
+   "releasedate": "Friday, September 14, 2001"
+ },
+ {
+   "title": "To Kill a Mockingbird",
+   "author": "Lee, Harper",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Random House Grp",
+   "releasedate": "Thursday, October 5, 1989"
+ },
+ {
+   "title": "Men are from Mars, Women are from Venus:A Practical Guide for Improvin",
+   "author": "Gray, John",
+   "genre": "T8.7 Popular Culture & Media: General Interest",
+   "publisher": " HarperCollins Grp",
+   "releasedate": "Sunday, August 1, 1993"
+ },
+ {
+   "title": "Dear Fatty",
+   "author": "French, Dawn",
+   "genre": "T4.1A Autobiography: The Arts",
+   "publisher": "Random House Grp",
+   "releasedate": "Thursday, October 9, 2008"
+ },
+ {
+   "title": "Short History of Tractors in Ukrainian,A",
+   "author": "Lewycka, Marina",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Penguin Grp",
+   "releasedate": "Thursday, March 2, 2006"
+ },
+ {
+   "title": "Hannibal",
+   "author": "Harris, Thomas",
+   "genre": "F2.1 Crime, Thriller & Adventure",
+   "publisher": "Random House Grp",
+   "releasedate": "Thursday, May 18, 2000"
+ },
+ {
+   "title": "Lord of the Rings,The",
+   "author": "Tolkien, J. R. R.",
+   "genre": "F2.2 Science Fiction & Fantasy",
+   "publisher": "HarperCollins Grp",
+   "releasedate": "Monday, June 5, 1995"
+ },
+ {
+   "title": "Stupid White Men:...and Other Sorry Excuses for the State of the Natio",
+   "author": "Moore, Michael",
+   "genre": "T7.5 Current Affairs & Issues",
+   "publisher": "Penguin Grp",
+   "releasedate": "October 3, 2002"
+ },
+ {
+   "title": "Interpretation of Murder,The",
+   "author": "Rubenfeld, Jed",
+   "genre": "F2.1 Crime, Thriller & Adventure",
+   "publisher": "Headline Grp",
+   "releasedate": "Monday, January 15, 2007"
+ },
+ {
+   "title": "Sharon Osbourne Extreme:My Autobiography",
+   "author": "Osbourne, Sharon",
+   "genre": "T4.1A Autobiography: The Arts",
+   "publisher": "Little, Brown Book Grp",
+   "releasedate": "Monday, October 3, 2005"
+ },
+ {
+   "title": "Alchemist,The:A Fable About Following Your Dream",
+   "author": "Coelho, Paulo",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "HarperCollins Grp",
+   "releasedate": "Saturday, January 3, 1998"
+ },
+ {
+   "title": "At My Mother's Knee ...:and Other Low Joints",
+   "author": "O'Grady, Paul",
+   "genre": "T4.1A Autobiography: The Arts",
+   "publisher": "Transworld Grp",
+   "releasedate": "Wednesday, September 24, 2008"
+ },
+ {
+   "title": "Notes from a Small Island",
+   "author": "Bryson, Bill",
+   "genre": "T8.5 Travel Writing",
+   "publisher": "Transworld Grp",
+   "releasedate": "Thursday, August 1, 1996"
+ },
+ {
+   "title": "Return of the Naked Chef,The",
+   "author": "Oliver, Jamie",
+   "genre": "T16.0 Food & Drink: General",
+   "publisher": "Penguin Grp",
+   "releasedate": "Thursday, March 30, 2000"
+ },
+ {
+   "title": "Bridget Jones: The Edge of Reason",
+   "author": "Fielding, Helen",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Pan Macmillan Grp",
+   "releasedate": "Thursday, June 15, 2000"
+ },
+ {
+   "title": "Jamie's Italy",
+   "author": "Oliver, Jamie",
+   "genre": "T16.1 National & Regional Cuisine",
+   "publisher": "Penguin Grp",
+   "releasedate": "Monday, October 3, 2005"
+ },
+ {
+   "title": "I Can Make You Thin",
+   "author": "McKenna, Paul",
+   "genre": "T9.4 Fitness & Diet",
+   "publisher": "Transworld Grp",
+   "releasedate": "Monday, January 17, 2005"
+ },
+ {
+   "title": "Down Under",
+   "author": "Bryson, Bill",
+   "genre": "T8.5 Travel Writing",
+   "publisher": "Transworld Grp",
+   "releasedate": "Saturday, May 5, 2001"
+ },
+ {
+   "title": "Summons,The",
+   "author": "Grisham, John",
+   "genre": "F2.1 Crime, Thriller & Adventure",
+   "publisher": "Random House Grp",
+   "releasedate": "Saturday, September 28, 2002"
+ },
+ {
+   "title": "Small Island",
+   "author": "Levy, Andrea",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Headline Grp",
+   "releasedate": "Monday, September 13, 2004"
+ },
+ {
+   "title": "Nigella Express",
+   "author": "Lawson, Nigella",
+   "genre": "T16.0 Food & Drink: General",
+   "publisher": "Random House Grp",
+   "releasedate": "Thursday, September 6, 2007"
+ },
+ {
+   "title": "Brick Lane",
+   "author": "Ali, Monica",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Transworld Grp",
+   "releasedate": "Saturday, May 1, 2004"
+ },
+ {
+   "title": "Memory Keeper's Daughter,The",
+   "author": "Edwards, Kim",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Penguin Grp",
+   "releasedate": "Saturday, April 7, 2007"
+ },
+ {
+   "title": "Room on the Broom",
+   "author": "Donaldson, Julia",
+   "genre": "Y1.3 Picture Books",
+   "publisher": "Pan Macmillan Grp",
+   "releasedate": "Friday, September 20, 2002"
+ },
+ {
+   "title": "About a Boy",
+   "author": "Hornby, Nick",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Penguin Grp",
+   "releasedate": "Thursday, April 4, 2002"
+ },
+ {
+   "title": "My Booky Wook",
+   "author": "Brand, Russell",
+   "genre": "T4.1A Autobiography: The Arts",
+   "publisher": "Hodder & Stoughton Grp",
+   "releasedate": "Thursday, November 15, 2007"
+ },
+ {
+   "title": "God Delusion,The",
+   "author": "Dawkins, Richard",
+   "genre": "T8.0 Popular Science",
+   "publisher": "Transworld Grp",
+   "releasedate": "Monday, May 21, 2007"
+ },
+ {
+   "title": "Beano Annual,The",
+   "author": "Multiple",
+   "genre": "Y3.1 Children's Annuals",
+   "publisher": "D.C. Thomson Grp",
+   "releasedate": "Wednesday, September 1, 2004"
+ },
+ {
+   "title": "White Teeth",
+   "author": "Smith, Zadie",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Penguin Grp",
+   "releasedate": "Thursday, January 25, 2001"
+ },
+ {
+   "title": "House at Riverton,The",
+   "author": "Morton, Kate",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Pan Macmillan Grp",
+   "releasedate": "Friday, June 15, 2007"
+ },
+ {
+   "title": "Book Thief,The",
+   "author": "Zusak, Markus",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Transworld Grp",
+   "releasedate": "Saturday, September 8, 2007"
+ },
+ {
+   "title": "Nights of Rain and Stars",
+   "author": "Binchy, Maeve",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Orion Grp",
+   "releasedate": "Wednesday, June 29, 2005"
+ },
+ {
+   "title": "Ghost,The",
+   "author": "Harris, Robert",
+   "genre": "F1.1 General & Literary Fiction",
+   "publisher": "Random House Grp",
+   "releasedate": "Thursday, July 3, 2008"
+ },
+ {
+   "title": "Happy Days with the Naked Chef",
+   "author": "Oliver, Jamie",
+   "genre": "T16.0 Food & Drink: General",
+   "publisher": "Penguin Grp",
+   "releasedate": "Monday, September 3, 2001"
+ },
+ {
+   "title": "Hunger Games,The:Hunger Games Trilogy",
+   "author": "Collins, Suzanne",
+   "genre": "Y2.2 Young Adult Fiction",
+   "publisher": "Scholastic Ltd. Grp",
+   "releasedate": "Thursday, December 1, 2011"
+ },
+ {
+   "title": "Lost Boy,The:A Foster Child's Search for the Love of a Family",
+   "author": "Pelzer, Dave",
+   "genre": "T4.0 Biography: General",
+   "publisher": "Orion Grp",
+   "releasedate": "Saturday, April 7, 2001"
+ },
+ {
+   "title": "Jamie's Ministry of Food:Anyone Can Learn to Cook in 24 Hours",
+   "author": "Oliver, Jamie",
+   "genre": "T16.0 Food & Drink: General",
+   "publisher": "Penguin Grp",
+   "releasedate": "Friday, October 3, 2008"
+ }
+]

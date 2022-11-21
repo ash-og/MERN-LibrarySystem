@@ -1,12 +1,13 @@
 import './App.css';
-import AddUser from "./users/AddUser";
-import SearchUser from "./users/SearchUser";
+import "./index.css";
+import Navbar from "./components/Navigation/Navbar";
+import SearchBooks from "./components/Searchbar/SearchBooks";
 
 export default function App() {
   return (
-      <div className="grid grid-cols-2 divide-x">
-          <div><AddUser></AddUser></div>
-          <div><SearchUser></SearchUser></div>
+      <div>
+          <div><Navbar></Navbar></div>
+          <div><SearchBooks></SearchBooks></div>
       </div>
   )
 }

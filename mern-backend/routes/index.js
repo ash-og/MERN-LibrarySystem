@@ -1,50 +1,45 @@
 var express = require('express');
 var User = require('../model/user');
+var Book = require('../model/book');
 var mongoose = require('mongoose');
 
 var router = express.Router();
 
-router.get('/users', function(req, res, next) {
-  let searchQuery = {};
+// router.get('/users', function(req, res, next) {
+//   let searchQuery = {};
 
-  if(req.query.name)
-    searchQuery = { name: req.query.name };
+//   if(req.query.name)
+//     searchQuery = { name: req.query.name };
 
-  User.find(searchQuery, function(err, users){
-    if (err) {
-      res.status(400);      
-      res.send();
-    }
+//   User.find(searchQuery, function(err, users){
+//     if (err) {
+//       res.status(400);      
+//       res.send();
+//     }
 
-    if (!users) {
-      res.status(404);
-      res.send("Cannot find user");
-    }
+//     if (!users) {
+//       res.status(404);
+//       res.send("Cannot find user");
+//     }
 
-    console.log("returning the user.");
-    res.send(users);
-  })
-});
+//     console.log("returning the user.");
+//     res.send(users);
+//   })
+// });
 
 router.get('/books', function(req, res, next) {
   let searchQuery = {};
 
-  if(req.query.name)
-    searchQuery = { name: req.query.name };
+  if(req.query.title)
+    searchQuery = { title: req.query.title };
 
-  User.find(searchQuery, function(err, users){
+  Book.find(searchQuery, function(err, books){
     if (err) {
       res.status(400);      
       res.send();
     }
-
-    if (!users) {
-      res.status(404);
-      res.send("Cannot find user");
-    }
-
-    console.log("returning the user.");
-    res.send(users);
+    console.log("returning the book.");
+    res.send(books);
   })
 });
 
@@ -66,24 +61,24 @@ router.post('/users', function(req, res, next) {
 });
 
 
-router.post('/updateuser/:id',function(req, res) {
+// router.post('/updateuser/:id',function(req, res) {
 
-  let id = req.params.id
-  let updatedUser = new User(req.body);
-  User.findByIdAndUpdate(id,
-      {
-        name:updatedUser.name,
-        age:updatedUser.age
-      }, function (err, docs) {
-        if (err) {
-          console.log("not saved!");
-          res.status(400);
-          res.send();
-        } else {
-          res.status(200).json({'users': 'user updated successfully'});
-          }
-      })
-});
+//   let id = req.params.id
+//   let updatedUser = new User(req.body);
+//   User.findByIdAndUpdate(id,
+//       {
+//         name:updatedUser.name,
+//         age:updatedUser.age
+//       }, function (err, docs) {
+//         if (err) {
+//           console.log("not saved!");
+//           res.status(400);
+//           res.send();
+//         } else {
+//           res.status(200).json({'users': 'user updated successfully'});
+//           }
+//       })
+// });
 
 
 module.exports = router;

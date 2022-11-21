@@ -1,17 +1,10 @@
 import React, {Fragment, useState} from 'react';
-import EditUser from './EditUser';
-import ListUser from './ListUser';
 
 
 const SearchUser = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
-    const [editUserId, setEditUserId] = useState(null);
-    const [updateUserData, setUpdateUserData] = useState({
-        name: "",
-        age: "",
-    })
     
     const handleSearchQueryChange = (event) => {
         event.preventDefault();
@@ -31,23 +24,11 @@ const SearchUser = () => {
                 });
         } catch (err) {
             // Remediation logic
-            setErrorMessage('There was an error searching for the user');
+            setErrorMessage('There was an error searching for the book');
         }
     }
 
     // Function to handle my edit event. Sets EditUserId to the user from the edit click
-
-    const handleEditClick = (event, user) => {
-        event.preventDefault();
-        setEditUserId(user._id);
-
-        const formValues = {
-            name: user.name,
-            age: user.age
-        }
-
-        setUpdateUserData(formValues);
-    };
 
     return(
         <div className="flex items-center justify-center ">
@@ -65,27 +46,16 @@ const SearchUser = () => {
                         <table className="table-auto">
                             <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Age</th>
+                                <th>Title</th>
+                                <th>Author</th>
                             </tr>
                             </thead>
                             <tbody>
-                            {searchResults.map((user) => (
-                                <Fragment>
-                                    { editUserId === user._id ? (
-                                        <EditUser editUserId={editUserId}
-                                         
-                                        setEditUserId={setEditUserId} 
-                                        updateUserData={updateUserData} 
-                                        setUpdateUserData={setUpdateUserData}                                         
-                                        /> 
-                                    ) : (
-                                        <ListUser 
-                                        user={user} 
-                                        handleEditClick={handleEditClick}
-                                        />
-                                    )}                                       
-                                </Fragment>
+                            {searchResults.map((book) => (
+                                <tr>
+                                    <td>{book.title}</td>
+                                    <td>{book.author}</td>
+                                </tr>
                             ))}
                             </tbody>
                         </table>
