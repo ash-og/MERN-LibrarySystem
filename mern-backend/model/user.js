@@ -7,7 +7,7 @@ var userSchema = new Schema({
   username: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true },
-  borrowed: [{type: mongoose.Schema.Types.ObjectId, ref: 'bookInstance'}]
+  favourites: [{type: mongoose.Schema.Types.ObjectId, ref: 'book'}]
   // image: String,
   // hash: String,
   // salt: String
