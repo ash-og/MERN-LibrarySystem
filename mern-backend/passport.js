@@ -1,7 +1,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const JwtStrategy = require('passport-jwt');
-const User = require('../model/user');
+const JwtStrategy = require('passport-jwt').Strategy;
+const User = require('./model/User');
 
 // Credit @ https://www.youtube.com/watch?v=FlZVFnErMU4
 
