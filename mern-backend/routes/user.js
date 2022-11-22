@@ -5,6 +5,7 @@ const passportConfig = require('../passport');
 const JWT = require('jsonwebtoken');
 const User = require('../model/User');
 const Book = require('../model/Book');
+const { findById } = require('../model/User');
 
 // Credit @ https://www.youtube.com/watch?v=uw1c4Cfl9iU
 
@@ -54,6 +55,21 @@ userRouter.get('/logout',passport.authenticate('jwt', {session : false}), (req, 
     res.clearCookie('access_token');
     res.json({user :{username : "", email : ""}, success : true});
 });
+
+
+// // Favourites
+
+// userRouter.post('/favourite/:id',passport.authenticate('jwt', {session : false}), async (req, res)=>{
+//     let id = req.params.id
+//     const favourite = await Book.findById(id);
+//     req.user.favourites.push(favourite);
+//     req.user.save(err=>{
+//         if (err)
+//             res.status(500).json({message : {msgBody : "Error has occurred", msgError : true}});
+//         else
+//             res.status(200).json({message : {msgBody : "Successfully added favourite", msgError : false}});
+//     });
+// });
 
 module.exports = userRouter;
 
