@@ -8,6 +8,15 @@ const Book = require('../model/Book');
 
 // Credit @ https://www.youtube.com/watch?v=uw1c4Cfl9iU
 
+const signToken = userID => {
+    return JWT.sign({
+        iss : "NoobCoder",
+        sub : userID
+    }, "NoobCoder", {expiresIn: "1h"});
+};
+
+// Resgister new user
+
 userRouter.post('/register',(req, res)=>{
     const { username, email, password } = req.body;
     User.findOne({username},(err,user)=>{
@@ -25,6 +34,18 @@ userRouter.post('/register',(req, res)=>{
             });
         }
     });
+});
+
+
+// User logon
+
+userRouter.post('/login',passport.authenticate('local', {session : false}), (req, res)=>{
+    if(req.isAuthenticated()){
+        const {_id, username, email} = req.user;
+        const token = signToken(_id);
+        res.cookie('access_token',token,{httpOnly: true, sameSite: true}); // prevent JS and site forgery attacks
+        res.status(200).json({isAuthenticated: true,user: {username,email}});
+    }
 });
 
 module.exports = userRouter;
