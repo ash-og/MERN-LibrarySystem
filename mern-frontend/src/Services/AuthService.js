@@ -35,4 +35,5 @@ export default {
                     else
                         return { isAuthenticated : false, user : {username : "", email : ""}};
                 });
-    }}; 
+    }
+}; 
