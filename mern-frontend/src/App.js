@@ -1,14 +1,16 @@
+import React from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 import "./index.css";
 import Navbar from "./components/Navigation/Navbar";
+import Home from "./pages/Home/Home";
 import SearchBooks from "./components/Searchbar/SearchBooks";
 
 export default function App() {
   return (
-      <div>
-          <div><Navbar></Navbar></div>
-          <h1>Welcome to Local Library</h1>
-          <div><SearchBooks></SearchBooks></div>
-      </div>
-  )
+      <Router>
+          <Navbar />
+          <Route exact path='/' component={Home} />
+      </Router>
+  );
 }
