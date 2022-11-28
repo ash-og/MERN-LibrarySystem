@@ -9,7 +9,7 @@ const BookSchema = new Schema({
   author: {  type: String , required: true },
   genre: { type: String },
   publisher: { type: String },
-  releasedate: { type: String }
+  year: { type: Number }
 });
 
 // Virtual for book's URL

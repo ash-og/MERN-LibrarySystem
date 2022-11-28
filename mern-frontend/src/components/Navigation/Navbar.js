@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useNavigate } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import AuthService from "../../Services/AuthService";
 import {AuthContext} from "../../Context/AuthContext";
@@ -8,12 +9,15 @@ import {AuthContext} from "../../Context/AuthContext";
 
 const Navbar = props =>{
     const {isAuthenticated,user,setIsAuthenticated,setUser} = useContext(AuthContext);
+
+    const navigate = useNavigate();
     
     const onClickLogoutHandler = ()=>{
         AuthService.logout().then(data=>{
             if(data.success){
                 setUser(data.user);
                 setIsAuthenticated(false);
+                navigate('/')
             }
         });
     }
@@ -68,16 +72,16 @@ const Navbar = props =>{
         )
     }
     return(
-        <nav className="navbar navbar-expand-md navbar-dark bg-primary">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <Link to="/">
                 <div className="navbar-brand">Bobo Tatty</div>
             </Link>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
             </button>
-            {/*className="collapse navbar-collapse"*/}
-            <div id="navbarText">
-                <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+            
+            <div className="collapse navbar-collapse" id="navbarText">
+                <ul className="navbar-nav mr-auto">
                     { !isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
                 </ul>
             </div>

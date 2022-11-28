@@ -5,7 +5,7 @@ import Navbar from "./components/Navigation/Navbar";
 import Home from "./pages/Home";
 import Login from './pages/Login';
 import Register from './pages/SignUp';
-// import SearchBooks from "./components/Searchbar/SearchBooks";
+import Profile from './pages/Profile';
 
 export default function App() {
     return (
@@ -15,7 +15,9 @@ export default function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
+                <Route path='/profile' element={<Profile />} />
             </Routes>
         </BrowserRouter>
+
     );
 }

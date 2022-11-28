@@ -1,4 +1,5 @@
 import React, {useState,useContext} from 'react';
+import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import AuthService from '../Services/AuthService';
 import Message from '../components/Message';
@@ -52,8 +53,8 @@ const Login = props => {
                        onChange={onChange} 
                        className="form-control" 
                        placeholder="Please enter password"/>
-                <button className="btn btn-lg btn-primary btn-block" 
-                        type="submit">Login </button>
+                 <Button variant="primary" className="btn-primary" 
+                        type="submit">Login </Button>
             </form>
             {message ? <Message message={message}/> : null}
         </div>
