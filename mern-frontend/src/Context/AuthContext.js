@@ -3,7 +3,7 @@ import AuthService from '../Services/AuthService';
 
 export const AuthContext = createContext();
 
-export const AuthContextProvider = ({ children })=>{
+const AuthContextProvider = ({ children })=>{
     const [user,setUser] = useState(null);
     const [isAuthenticated,setIsAuthenticated] = useState(false);
     const [isLoaded,setIsLoaded] = useState(false);
@@ -25,3 +25,5 @@ export const AuthContextProvider = ({ children })=>{
         </div>
     )
 }
+
+export default AuthContextProvider;

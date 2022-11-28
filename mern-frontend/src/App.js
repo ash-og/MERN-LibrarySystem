@@ -1,12 +1,21 @@
-import React, { useContext } from "react";
-import { AuthContext } from "./Context/AuthContext";
+import React from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import "./index.css";
+import Navbar from "./components/Navigation/Navbar";
+import Home from "./pages/Home";
+import Login from './pages/Login';
+import Register from './pages/SignUp';
+// import SearchBooks from "./components/Searchbar/SearchBooks";
 
 export default function App() {
-  const { user,setUser,isAuthenticated,setIsAuthenticated } = useContext(AuthContext);
-  console.log(user);
-  console.log(isAuthenticated);
-  return (
-    <p>Placeholder</p>
-  )
+    return (
+        <BrowserRouter>
+            <Navbar />
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/register' element={<Register />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }

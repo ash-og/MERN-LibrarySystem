@@ -7,7 +7,7 @@
 // Register user
 
 const register = user => {
-    return fetch('user/login',{
+    return fetch('user/register',{
         method : 'post',
         body : JSON.stringify(user),
         headers : {
@@ -27,8 +27,12 @@ const login = user =>{
         headers : {
             'Content-type' : 'application/json'
         }
-    }).then(res => res.json())
-      .then(data => data);
+    }).then(res => {
+        if(res.status !== 401)
+            return res.json().then(data => data);
+        else
+            return { isAuthenticated : false, user : {username : "", email : ""}};
+    })
 }
 
 
@@ -52,11 +56,11 @@ const isAuthenticated = () => {
             });
 }
 
-const authService = {
+const AuthService = {
     register,
     login,
     logout,
     isAuthenticated,
 }
 
-export default authService;
+export default AuthService;

@@ -5,7 +5,6 @@ const passportConfig = require('../passport');
 const JWT = require('jsonwebtoken');
 const User = require('../model/User');
 const Book = require('../model/Book');
-const { findById } = require('../model/User');
 
 // Credit @ https://www.youtube.com/watch?v=uw1c4Cfl9iU
 
