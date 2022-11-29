@@ -1,12 +1,41 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from "axios";
+import styles from './styles.module.css';
 import Message from '../../components/Message';
+import Table from './Table';
 
 
 const SearchBooks = () => {
+    const [obj, setObj] = useState({});
+    const [sort, setSort] = useState({sort: "author", order: "desc"});
+    const [filterGenre, setFilterGenre] = useState([]);
+	const [page, setPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
-    
+
+    const base_url = `http://localhost:3100/books`
+
+    // useEffect credit @ https://www.youtube.com/watch?v=_i4Wi43NTDo
+
+    useEffect(() => {
+        const getAllBooks = async () => {
+            try {
+                const url = `${base_url}?page=${page}&sort=${sort.sort},${
+					sort.order
+				}&genre=${filterGenre.toString()}&search=${searchQuery}`;
+				const { data } = await axios.get(url);
+				setObj(data);
+			} catch (err) {
+				console.log(err);
+                setErrorMessage('There was an error searching for the book');
+			}
+		};
+
+		getAllBooks();
+	}, [sort, filterGenre, page, searchQuery]);
+
+            
     const handleSearchQueryChange = (event) => {
         event.preventDefault();
         setSearchQuery(event.target.value);
@@ -14,15 +43,10 @@ const SearchBooks = () => {
 
     async function handleSearchBooks(event) {
         event.preventDefault();
-        setErrorMessage('');   
-        
+        setErrorMessage('');    
 
         try {
-            fetch(`http://localhost:3100/books?search=${searchQuery}`)
-                .then(response => response.json())
-                .then(data => {
-                    setSearchResults(data.books);
-                });
+            setSearchResults(obj.books);
         } catch (err) {
             // Remediation logic
             setErrorMessage('There was an error searching for the book');
@@ -33,34 +57,33 @@ const SearchBooks = () => {
         <div className="flex items-center justify-center ">
             <div className="grid grid-flow-row auto-rows-max">
                 <div className="flex border-2 border-gray-200 rounded">
-                    <input type="text" className="px-4 py-2 w-80" placeholder="Search..." value={searchQuery} onChange={handleSearchQueryChange}>
+                    <input type="text" className={styles.search} placeholder="Search..." value={searchQuery} onChange={handleSearchQueryChange}>
                     </input>
-                    <button className="px-4 text-white bg-gray-600" onClick={handleSearchBooks}>
+                    <button className="btn btn-primary" onClick={handleSearchBooks}>
                         Search
                     </button>
 
                 </div>
+                <div className="body">
+					<div className="table_container">
+						<Table books={searchResults ? searchResults : []} />
+						{/* <Pagination
+							page={page}
+							limit={obj.limit ? obj.limit : 0}
+							total={obj.total ? obj.total : 0}
+							setPage={(page) => setPage(page)}
+						/> */}
+					</div>
+					<div className="filter_container">
+						{/* <Sort sort={sort} setSort={(sort) => setSort(sort)} />
+						<Genre
+							filterGenre={filterGenre}
+							genres={obj.genres ? obj.genres : []}
+							setFilterGenre={(genre) => setFilterGenre(genre)}
+						/> */}
+					</div>
+				</div>
                 <div>
-                    <form>
-                        <table className="table table-hover">
-                            <thead className="thead-dark">
-                                <tr>
-                                    <th scope="col">Title</th>
-                                    <th scope="col">Author</th>
-                                    <th scope="col">Genre</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {searchResults.map((book) => (
-                                    <tr>
-                                        <td>{book.title}</td>
-                                        <td>{book.author}</td>
-                                        <td>{book.genre}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </form>
                     {errorMessage ? <Message message={errorMessage}/> : null}
                 </div>
             </div>
