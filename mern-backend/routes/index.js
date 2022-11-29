@@ -54,7 +54,7 @@ router.get("/books", async (req, res) => {
 
 		const total = await Book.countDocuments({
 			genre: { $in: genre },
-			name: { $regex: search, $options: "i" },
+			title: { $regex: search, $options: "i" },
 		});
 
 		const response = {

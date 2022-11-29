@@ -11,7 +11,6 @@ const SearchBooks = () => {
     const [filterGenre, setFilterGenre] = useState([]);
 	const [page, setPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
 
     const base_url = `http://localhost:3100/books`
@@ -41,38 +40,43 @@ const SearchBooks = () => {
         setSearchQuery(event.target.value);
     }
 
-    async function handleSearchBooks(event) {
-        event.preventDefault();
-        setErrorMessage('');    
+    const onClickPage = (newPage) => {
+        const totalPages = Math.ceil(obj.total / obj.limit);
 
-        try {
-            setSearchResults(obj.books);
-        } catch (err) {
-            // Remediation logic
-            setErrorMessage('There was an error searching for the book');
+		if (newPage < 1) {
+            newPage = totalPages;
+        } else if (newPage > totalPages) {
+            newPage = 1;
         }
-    }
+        setPage(newPage);
+	};
 
     return(
-        <div className="flex items-center justify-center ">
-            <div className="grid grid-flow-row auto-rows-max">
-                <div className="flex border-2 border-gray-200 rounded">
+        <div className="wrapper">
+            <div className="container">
+                <div className="head">
                     <input type="text" className={styles.search} placeholder="Search..." value={searchQuery} onChange={handleSearchQueryChange}>
                     </input>
-                    <button className="btn btn-primary" onClick={handleSearchBooks}>
-                        Search
-                    </button>
-
                 </div>
                 <div className="body">
 					<div className="table_container">
-						<Table books={searchResults ? searchResults : []} />
-						{/* <Pagination
-							page={page}
-							limit={obj.limit ? obj.limit : 0}
-							total={obj.total ? obj.total : 0}
-							setPage={(page) => setPage(page)}
-						/> */}
+						<Table books={obj.books ? obj.books : []} />
+                        <div className={styles.paginationContainer}>
+                            <button className={styles.page_btn}
+                                onClick={() => {
+                                    onClickPage(page - 1);
+                                }}
+                            >
+                                Prev
+                            </button>
+                            <button className={styles.page_btn}
+                                onClick={() => {
+                                    onClickPage(page + 1);
+                                }}
+                            >
+                                Next
+                            </button>
+                        </div>
 					</div>
 					<div className="filter_container">
 						{/* <Sort sort={sort} setSort={(sort) => setSort(sort)} />

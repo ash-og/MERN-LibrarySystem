@@ -62,13 +62,13 @@ const Register = props=>{
                        onChange={onChange} 
                        className="form-control" 
                        placeholder="Enter email"/>
+                <label htmlFor="password" className="sr-only">Password: </label>
                 <input type="password" 
                        name="password"
                        value={user.password} 
                        onChange={onChange} 
                        className="form-control" 
                        placeholder="Enter Password"/>
-                <label htmlFor="password" className="sr-only">Password: </label>
                 {/* <input type="text" 
                        name="role"
                        value={user.role}  
