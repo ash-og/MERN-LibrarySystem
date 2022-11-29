@@ -1,0 +1,45 @@
+.wrapper {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	width: 100%;
+    min-height: 680px;
+    padding: 20px;
+	border-radius: 10px;
+	box-shadow: var(--box-shadow);
+	display: flex;
+	flex-direction: column;
+	background-color: whitesmoke
+}
+
+.head {
+	display: flex;
+	align-content: center;
+	height: 80px;
+	justify-content: space-between;
+}
+
+.logo {
+	width: 100px;
+	object-fit: contain;
+	margin-left: 15px;
+}
+
+.body {
+	height: 500px;
+	display: flex;
+}
+
+.table_container {
+	flex: 3;
+	position: relative;
+}
+
+.filter_container {
+	flex: 1;
+}

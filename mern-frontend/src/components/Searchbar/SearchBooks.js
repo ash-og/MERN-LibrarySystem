@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
 import styles from './styles.module.css';
+import "../../App.css";
 import Message from '../../components/Message';
 import Table from './Table';
+import Sort from './Sort';
+import Genre from './Genre';
 
 
 const SearchBooks = () => {
@@ -79,17 +82,14 @@ const SearchBooks = () => {
                         </div>
 					</div>
 					<div className="filter_container">
-						{/* <Sort sort={sort} setSort={(sort) => setSort(sort)} />
+						<Sort sort={sort} setSort={(sort) => setSort(sort)} />
 						<Genre
 							filterGenre={filterGenre}
 							genres={obj.genres ? obj.genres : []}
 							setFilterGenre={(genre) => setFilterGenre(genre)}
-						/> */}
+						/>
 					</div>
 				</div>
-                <div>
-                    {errorMessage ? <Message message={errorMessage}/> : null}
-                </div>
             </div>
         </div>
     );

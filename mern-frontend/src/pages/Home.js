@@ -1,4 +1,5 @@
 import React from "react"
+import styles from '../App.css';
 import SearchBooks from "../components/Searchbar/SearchBooks";
 // import background from "../assets/Library2.jpg"
 

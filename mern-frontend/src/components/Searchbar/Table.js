@@ -6,7 +6,7 @@ import faveImg from '../../assets/heart.svg'
 const Table = ({ books }) => {
 	return (
 		<div className={styles.container}>
-			<div className={styles.heading}>
+			<div className={styles.headingTable}>
 				<p className={styles.title_tab}>Title</p>
                 <p className={styles.genre_tab}>Author</p>
 				<p className={styles.genre_tab}>Genre</p>

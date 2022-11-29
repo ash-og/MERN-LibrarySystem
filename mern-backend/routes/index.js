@@ -10,7 +10,7 @@ var router = express.Router();
 router.get("/books", async (req, res) => {
 	try {
 		const page = parseInt(req.query.page) - 1 || 0;
-		const limit = parseInt(req.query.limit) || 5;
+		const limit = parseInt(req.query.limit) || 6;
 		const search = req.query.search || "";
 		let sort = req.query.sort || "author";
 		let genre = req.query.genre || "All";
