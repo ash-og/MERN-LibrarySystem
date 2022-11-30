@@ -143,3 +143,18 @@ userRouter.post('/favourite/:id',passport.authenticate('jwt', {session : false})
 
 module.exports = userRouter;
 
+
+// Delete profile
+
+userRouter.delete('/favourite/:id',passport.authenticate('jwt',{session : false}), async (req,res)=>{
+
+    let id = req.params.id
+    const favourite = await Book.findById(id);
+    req.user.favourites.pull(favourite);
+    req.user.save(err=>{
+        if (err)
+            res.status(500).json({message : {msgBody : "Error has occurred", msgError : true}});
+        else
+            res.status(200).json({message : {msgBody : "Successfully removed favourite", msgError : false}});
+    });
+});

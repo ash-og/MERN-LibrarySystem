@@ -4,9 +4,25 @@ import Row from 'react-bootstrap/esm/Row';
 
 const FavouriteItem = props =>{
 
-    const handleRemove = (event) => {
-        
-    }
+    const handleRemove = (event, book) => {
+        event.preventDefault();
+
+		let bookId = book._id;
+
+		try {
+			fetch(`/user/favourite/${bookId}`,{
+				method : "DELETE",
+			}).then(response=>{
+				if(response.status !== 401){
+					return response.json().then(data => data);
+				}
+				else
+					return {message : {msgBody : "UnAuthorized"},msgError : true};
+			});
+
+		} catch (err) {
+			console.log(err);
+		}};
 
     return (
         <>  
@@ -27,7 +43,7 @@ const FavouriteItem = props =>{
                     <p className="card-text text-muted">{props.favourite.author}</p>
                 </Col>
                 <Col className="text-center">
-                    <button type="button" className="btn btn-dark btn-md" onClick={(event)=> handleRemove(event, props.favourite)}>Remove</button>
+                    <button type="button" className="btn btn-dark btn-md" onClick={(event)=> handleRemove(event, book)}>Remove</button>
                 </Col>
             </Row>
             <hr/>
