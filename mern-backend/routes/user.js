@@ -71,27 +71,6 @@ userRouter.get('/profile',passport.authenticate('jwt',{session : false}),(req,re
     });
 });
 
-
-// router.post('/updateuser/:id',function(req, res) {
-
-//   let id = req.params.id
-//   let updatedUser = new User(req.body);
-//   User.findByIdAndUpdate(id,
-//       {
-//         name:updatedUser.name,
-//         age:updatedUser.age
-//       }, function (err, docs) {
-//         if (err) {
-//           console.log("not saved!");
-//           res.status(400);
-//           res.send();
-//         } else {
-//           res.status(200).json({'users': 'user updated successfully'});
-//           }
-//       })
-// });
-
-
 userRouter.post('/updateuser',passport.authenticate('jwt',{session : false}),(req,res)=>{
 
     let id = req.user._id
@@ -107,9 +86,22 @@ userRouter.post('/updateuser',passport.authenticate('jwt',{session : false}),(re
                     res.status(500).json({message : {msgBody : "Error has occured", msgError: true}});
                 } else {
                     res.status(200).json({message : {msgBody : "Successfully updated user details", msgError : false}});
-                  }
-              })
-        });
+                }
+            })  
+});
+
+userRouter.delete('/deleteuser',passport.authenticate('jwt',{session : false}),(req,res)=>{
+
+    let id = req.user._id
+
+    User.findByIdAndDelete(id, function (err, docs) {
+                if (err) {
+                    res.status(500).json({message : {msgBody : "Error has occured", msgError: true}});
+                } else {
+                    res.status(200).json({message : {msgBody : "Successfully deleted profile", msgError : false}});
+                }
+    })
+});
 
 
 

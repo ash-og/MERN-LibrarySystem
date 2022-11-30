@@ -56,7 +56,7 @@ const Login = props => {
                  <Button variant="primary" className="btn-primary" 
                         type="submit">Login </Button>
             </form>
-            {message ? <Message message={message}/> : null}
+            <div>{message ? <Message message={message}/> : null}</div>            
         </div>
     )
 }

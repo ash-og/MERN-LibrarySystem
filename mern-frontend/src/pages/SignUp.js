@@ -6,7 +6,7 @@ import Message from '../components/Message';
 // Credit @ https://youtu.be/7_fo3nrqiY8
 
 const Register = props=>{
-    const [user,setUser] = useState({username: "", email : "", password : ""});
+    const [user,setUser] = useState({username: "", email : "", image: "", password : ""});
     const [message,setMessage] = useState("");
     let timerID = useRef(null);
 
@@ -21,7 +21,7 @@ const Register = props=>{
     }
 
     const resetForm = ()=>{
-        setUser({username : "", email : "",password : ""});
+        setUser({username : "", email : "", image: "", password : ""});
     }
 
     const navigate = useNavigate()
@@ -62,6 +62,13 @@ const Register = props=>{
                        onChange={onChange} 
                        className="form-control" 
                        placeholder="Enter email"/>
+                <label htmlFor="image" className="sr-only">Profile Picture URL: </label>
+                <input type="text" 
+                       name="image"
+                       value={user.image}  
+                       onChange={onChange} 
+                       className="form-control" 
+                       placeholder="Enter image URL"/>
                 <label htmlFor="password" className="sr-only">Password: </label>
                 <input type="password" 
                        name="password"
