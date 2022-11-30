@@ -1,5 +1,4 @@
 import React from "react";
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import DeleteUser from "./DeleteUser";
@@ -8,8 +7,7 @@ import DeleteUser from "./DeleteUser";
 
 const UserDetails = ({ user, handleEditToggle }) => {
     return (
-        <Container>
-            <Row>
+        <>
                 <Col>
                     <div className="card" style={{ width: '18rem' }}>
                         <img src={`${user.image}`} alt='avatar' className="img-fluid img-thumbnail" />
@@ -49,9 +47,7 @@ const UserDetails = ({ user, handleEditToggle }) => {
                         </div>
                     </div>
                 </Col>
-            </Row>
-            <br/>
-      </Container>
+        </>
     );
 };
 

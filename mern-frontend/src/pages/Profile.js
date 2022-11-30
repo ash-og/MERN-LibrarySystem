@@ -4,6 +4,10 @@ import { AuthContext } from '../Context/AuthContext';
 import UserService from '../Services/UserService';
 import EditUser from '../components/users/EditUser';
 import UserDetails from '../components/users/UserDetails';
+import Favourites from '../components/users/Favourites';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const Profile = props =>{
     const [ user, setUser ] = useState({username: "", email: "", image: ""});
@@ -55,23 +59,39 @@ const Profile = props =>{
     };
 
     return(      
-        <>
+        <Container>
+            <Row>
+                <Col>
+                    <br/>
+                    <h1 className="text-center">Welcome to your profile, {`${user.username}`}! </h1>
+                    <br/>
+                </Col>
+            </Row>
+            <Row>
+                { editing ? (
+                    <EditUser
+                    user={user} 
+                    setUser={setUser}  
+                    setEditing={setEditing}                                       
+                    /> 
+                ) : (
+                    <UserDetails 
+                    user={user} 
+                    handleEditToggle={handleEditToggle}
+                    />
+                )}   
+            </Row>  
             <br/>
-            <h1 className="text-center">Welcome to your profile, {`${user.username}`}! </h1>
             <br/>
-            { editing ? (
-                <EditUser
-                user={user} 
-                setUser={setUser}  
-                setEditing={setEditing}                                       
-                /> 
-            ) : (
-                <UserDetails 
-                user={user} 
-                handleEditToggle={handleEditToggle}
-                />
-            )}                                
-        </>
+            <Row>
+                <h1>Favourites</h1>
+            </Row>
+            <Row>
+                <Col>
+                    <Favourites /> 
+                </Col>
+            </Row>                          
+        </Container>
     );
 }
 
