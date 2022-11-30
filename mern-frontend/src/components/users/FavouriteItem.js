@@ -1,16 +1,18 @@
 import React from 'react';
 import Col from 'react-bootstrap/esm/Col';
 import Row from 'react-bootstrap/esm/Row';
+import { useNavigate } from 'react-router-dom'; 
 
 const FavouriteItem = props =>{
+    const navigate = useNavigate();
 
-    const handleRemove = (event, book) => {
+    const handleRemove = (event, favourite) => {
         event.preventDefault();
 
-		let bookId = book._id;
+		let faveId = favourite._id;
 
 		try {
-			fetch(`/user/favourite/${bookId}`,{
+			fetch(`/user/favourite/${faveId}`,{
 				method : "DELETE",
 			}).then(response=>{
 				if(response.status !== 401){
@@ -22,7 +24,9 @@ const FavouriteItem = props =>{
 
 		} catch (err) {
 			console.log(err);
-		}};
+		} 
+        window.location.reload(false); 
+    };
 
     return (
         <>  
@@ -43,7 +47,7 @@ const FavouriteItem = props =>{
                     <p className="card-text text-muted">{props.favourite.author}</p>
                 </Col>
                 <Col className="text-center">
-                    <button type="button" className="btn btn-dark btn-md" onClick={(event)=> handleRemove(event, book)}>Remove</button>
+                    <button type="button" className="btn btn-dark btn-md" onClick={(event)=> handleRemove(event, props.favourite)}>Remove</button>
                 </Col>
             </Row>
             <hr/>

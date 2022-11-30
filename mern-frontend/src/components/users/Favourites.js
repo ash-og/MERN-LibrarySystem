@@ -52,7 +52,7 @@ const Favourites = props =>{
         <div>
                 {
                     faves.map(favourite =>{
-                        return <FavouriteItem key={favourite._id} favourite={favourite}/>
+                        return <FavouriteItem key={favourite._id} favourite={favourite} setFaves={setFaves}/>
                     })
                 }
             <br/>
