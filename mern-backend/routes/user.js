@@ -59,6 +59,30 @@ userRouter.get('/authenticated',passport.authenticate('jwt',{session : false}),(
     const {username,role} = req.user;
     res.status(200).json({isAuthenticated : true, user : {username,role}});
 });
+
+userRouter.get('/profile',passport.authenticate('jwt',{session : false}),(req,res)=>{
+    User.findById({_id : req.user._id}).exec((err,document)=>{
+        if(err)
+            res.status(500).json({message : {msgBody : "Error has occured", msgError: true}});
+        else{
+            console.log(document.username, document.email)
+            res.status(200).json({username : document.username, email: document.email, image: document.image, authenticated : true});
+        }
+    });
+});
+
+userRouter.get('/profile/favourites',passport.authenticate('jwt',{session : false}),(req,res)=>{
+    User.findById({_id : req.user._id}).populate('favourites').exec((err,document)=>{
+        if(err)
+            res.status(500).json({message : {msgBody : "Error has occured", msgError: true}});
+        else{
+            res.status(200).json({favourites : document.favourites, authenticated : true});
+        }
+    });
+});
+
+
+
 // // Favourites
 
 // userRouter.post('/favourite/:id',passport.authenticate('jwt', {session : false}), async (req, res)=>{

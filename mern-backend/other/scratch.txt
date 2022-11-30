@@ -1,0 +1,33 @@
+, function (err, docs) {
+    if (err){
+        res.status(500).json({message : {msgBody : "Error has occurred", msgError : true}});
+    }
+    else{
+        req.user.favourites.push(favourite);
+        req.user.save(err=>{
+            if (err)
+                res.status(500).json({message : {msgBody : "Error has occurred", msgError : true}});
+            else
+                res.status(200).json({message : {msgBody : "Successfully added favourite", msgError : false}});
+        });
+    }
+})
+});
+
+
+const { username, email, password } = req.body;
+User.findOne({username},(err,user)=>{
+    if(err)
+        res.status(500).json({message : {msgBody : "Error has occurred", msgError: true}});
+    if(user)
+        res.status(400).json({message : {msgBody : "User already exists", msgError: true}});
+    else{
+        const newUser = new User({username, email, password});
+        newUser.save(err=>{
+            if(err)
+                res.status(500).json({message : {msgBody : "Error has occurred", msgError: true}});
+            else   
+                res.status(201).json({message : {msgBody : "Profile created", msgError: false}});
+        });
+    }
+});

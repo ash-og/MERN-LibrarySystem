@@ -4,11 +4,11 @@ const bcrypt = require('bcrypt');
 
 // Define a schema.
 var userSchema = new Schema({
-  username: { type: String, required: true },
+  username: { type: String, required: true, min: 6, max: 15 },
   email: { type: String, required: true },
-  password: { type: String, required: true },
-  favourites: [{type: mongoose.Schema.Types.ObjectId, ref: 'book'}]
-  // image: String,
+  password: { type: String, required: true, min: 6, max: 15 },
+  image: { type: String },
+  favourites: [{type: mongoose.Schema.Types.ObjectId, ref: 'Book'}],
   // hash: String,
   // salt: String
 }, {timestamps: true});
