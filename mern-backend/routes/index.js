@@ -74,22 +74,6 @@ router.get("/books", async (req, res) => {
 });
 
 
-// router.get('/books', function(req, res, next) {
-//   let searchQuery = {};
-
-//   if(req.query.title)
-//     searchQuery = { title: req.query.title };
-
-//   Book.find(searchQuery, function(err, books){
-//     if (err) {
-//       res.status(400);      
-//       res.send();
-//     }
-//     console.log("returning the book.");
-//     res.send(books);
-//   })
-// });
-
 // router.post('/users', function(req, res, next) {
 //   let newUser = new User(req.body);
 //   newUser._id = mongoose.Types.ObjectId();
@@ -105,26 +89,6 @@ router.get("/books", async (req, res) => {
 //     }
 
 //   });
-// });
-
-
-// router.post('/updateuser/:id',function(req, res) {
-
-//   let id = req.params.id
-//   let updatedUser = new User(req.body);
-//   User.findByIdAndUpdate(id,
-//       {
-//         name:updatedUser.name,
-//         age:updatedUser.age
-//       }, function (err, docs) {
-//         if (err) {
-//           console.log("not saved!");
-//           res.status(400);
-//           res.send();
-//         } else {
-//           res.status(200).json({'users': 'user updated successfully'});
-//           }
-//       })
 // });
 
 

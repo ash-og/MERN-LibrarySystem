@@ -10,11 +10,6 @@ const Profile = props =>{
     const [ editing, setEditing ] = useState(false);
     // const [message,setMessage] = useState(null);
     const authContext = useContext(AuthContext);
-    const [updateUserData, setUpdateUserData] = useState({
-        username: "",
-        email: "",
-        image: "",
-    })
 
     useEffect(()=>{
         UserService.getUser().then(data =>{
@@ -56,35 +51,27 @@ const Profile = props =>{
 
     const handleEditToggle = (event) => {
         event.preventDefault();
-
         setEditing(true);
-
-        const formValues = {
-            username: user.username,
-            email: user.email,
-            image: user.image
-        }
-
-        setUpdateUserData(formValues);
     };
 
-    return(
+    return(      
         <>
-        { editing ? (
-            <EditUser 
-            user={user}
-            updateUserData={updateUserData} 
-            setUpdateUserData={setUpdateUserData}  
-            setEditing={setEditing}                                       
-            /> 
-        ) : (
-            // <tr>{user.username}</tr>
-            <UserDetails 
-            user={user} 
-            handleEditToggle={handleEditToggle}
-            />
-        )}                                       
-    </>
+            <br/>
+            <h1 className="text-center">Welcome to your profile, {`${user.username}`}! </h1>
+            <br/>
+            { editing ? (
+                <EditUser
+                user={user} 
+                setUser={setUser}  
+                setEditing={setEditing}                                       
+                /> 
+            ) : (
+                <UserDetails 
+                user={user} 
+                handleEditToggle={handleEditToggle}
+                />
+            )}                                
+        </>
     );
 }
 
