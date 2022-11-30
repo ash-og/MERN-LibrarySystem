@@ -55,10 +55,14 @@ userRouter.get('/logout',passport.authenticate('jwt', {session : false}), (req, 
     res.json({user :{username : "", email : ""}, success : true});
 });
 
+// User authentication
+
 userRouter.get('/authenticated',passport.authenticate('jwt',{session : false}),(req,res)=>{
     const {username,role} = req.user;
     res.status(200).json({isAuthenticated : true, user : {username,role}});
 });
+
+// Get user profile
 
 userRouter.get('/profile',passport.authenticate('jwt',{session : false}),(req,res)=>{
     User.findById({_id : req.user._id}).exec((err,document)=>{
@@ -70,6 +74,8 @@ userRouter.get('/profile',passport.authenticate('jwt',{session : false}),(req,re
         }
     });
 });
+
+// Edit user details
 
 userRouter.post('/updateuser',passport.authenticate('jwt',{session : false}),(req,res)=>{
 
@@ -90,6 +96,9 @@ userRouter.post('/updateuser',passport.authenticate('jwt',{session : false}),(re
             })  
 });
 
+
+// Delete profile
+
 userRouter.delete('/deleteuser',passport.authenticate('jwt',{session : false}),(req,res)=>{
 
     let id = req.user._id
@@ -104,7 +113,7 @@ userRouter.delete('/deleteuser',passport.authenticate('jwt',{session : false}),(
 });
 
 
-
+// Get favourites
 
 userRouter.get('/profile/favourites',passport.authenticate('jwt',{session : false}),(req,res)=>{
     User.findById({_id : req.user._id}).populate('favourites').exec((err,document)=>{
@@ -118,19 +127,19 @@ userRouter.get('/profile/favourites',passport.authenticate('jwt',{session : fals
 
 
 
-// // Favourites
+// Add Favourites
 
-// userRouter.post('/favourite/:id',passport.authenticate('jwt', {session : false}), async (req, res)=>{
-//     let id = req.params.id
-//     const favourite = await Book.findById(id);
-//     req.user.favourites.push(favourite);
-//     req.user.save(err=>{
-//         if (err)
-//             res.status(500).json({message : {msgBody : "Error has occurred", msgError : true}});
-//         else
-//             res.status(200).json({message : {msgBody : "Successfully added favourite", msgError : false}});
-//     });
-// });
+userRouter.post('/favourite/:id',passport.authenticate('jwt', {session : false}), async (req, res)=>{
+    let id = req.params.id
+    const favourite = await Book.findById(id);
+    req.user.favourites.push(favourite);
+    req.user.save(err=>{
+        if (err)
+            res.status(500).json({message : {msgBody : "Error has occurred", msgError : true}});
+        else
+            res.status(200).json({message : {msgBody : "Successfully added favourite", msgError : false}});
+    });
+});
 
 module.exports = userRouter;
 
