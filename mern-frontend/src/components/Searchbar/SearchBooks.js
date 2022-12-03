@@ -60,6 +60,16 @@ const SearchBooks = () => {
                 <div className="head">
                     <input type="text" className={styles.search} placeholder="Search..." value={searchQuery} onChange={handleSearchQueryChange}>
                     </input>
+                    <div>
+						<Sort sort={sort} setSort={(sort) => setSort(sort)} />
+                    </div>
+                    <div>
+						<Genre
+							filterGenre={filterGenre}
+							genres={obj.genres ? obj.genres : []}
+							setFilterGenre={(genre) => setFilterGenre(genre)}
+						/>
+					</div>
                 </div>
                 <div className="body">
 					<div className="table_container">
@@ -80,14 +90,6 @@ const SearchBooks = () => {
                                 Next
                             </button>
                         </div>
-					</div>
-					<div className="filter_container">
-						<Sort sort={sort} setSort={(sort) => setSort(sort)} />
-						<Genre
-							filterGenre={filterGenre}
-							genres={obj.genres ? obj.genres : []}
-							setFilterGenre={(genre) => setFilterGenre(genre)}
-						/>
 					</div>
 				</div>
             </div>

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import styles from './styles.module.css'
 import {AuthContext} from "../../Context/AuthContext";
+import NewReservation from "../Reservations/NewReservation";
 
 // Credit @ https://www.youtube.com/watch?v=_i4Wi43NTDo 
 
@@ -34,9 +35,12 @@ const Table = ({ books }) => {
                 <p className={styles.genre_tab}>Author</p>
 				<p className={styles.genre_tab}>Genre</p>
 				{ !isAuthenticated ?
-				null :
-                (<p className={styles.genre_tab}>Favourite</p>)
-				}
+				null : (
+				<>
+					<p className={styles.icon_tab}>Fave</p>
+					<p className={styles.icon_tab}>Reserve</p>
+				</>
+				)}
 			</div>
 			{books.map((book) => (
 				<div className={styles.book} key={book._id}>
@@ -52,11 +56,19 @@ const Table = ({ books }) => {
 						{book.genre}
 					</div>
 					{ !isAuthenticated ? 
-					null :
-					(<div className={styles.genre_container}>
-						<button type="button" className="btn btn-outline-primary waves-effect px-2" onClick={(event)=> handleHeartClick(event, book)}><i className="bi bi-heart" aria-hidden="true"></i></button>
-					</div>)}
-
+					null :	(
+					<>
+						<div className={styles.icon_container}>
+							<button type="button" className="btn btn-outline-primary waves-effect px-2" onClick={(event)=> handleHeartClick(event, book)}><i className="bi bi-heart" aria-hidden="true"></i></button>
+						</div>
+						{/* <div className={styles.icon_container}>
+							<button type="button" className="btn btn-outline-secondary waves-effect px-2"><i className="bi bi-clock" aria-hidden="true"></i></button>
+						</div>	 */}
+						<div className={styles.icon_container}>
+							<NewReservation book={book} />
+						</div>
+					</>				
+					)}
 				</div>
 			))}
 		</div>

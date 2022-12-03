@@ -4,33 +4,28 @@ import styles from "./styles.module.css";
 
 const Genre = ({ genres, filterGenre, setFilterGenre }) => {
 	const onChange = ({ currentTarget: input }) => {
-		if (input.checked) {
-			const state = [...filterGenre, input.value];
-			setFilterGenre(state);
-		} else {
-			const state = filterGenre.filter((val) => val !== input.value);
-			setFilterGenre(state);
-		}
+		setFilterGenre([input.value]);
 	};
 
 	return (
 		<div className={styles.containerGenre}>
-			<h1 className={styles.headingGenre}>Filter By Genre</h1>
-			<div className={styles.genres_container}>
-				{genres.map((genre) => (
-					<div className={styles.genre} key={genre}>
-						<input
-							className={styles.genre_input}
-							type="checkbox"
-							value={genre}
-							onChange={onChange}
-						/>
-						<p className={styles.genre_label}>{genre}</p>
-					</div>
-				))}
+			<p className={styles.sort_by}>Filter By Genre :</p>	
+			<div>
+				<select
+					className="form-select form-select-sm" 
+					aria-label=".form-select-sm example"
+					onChange={onChange}
+					defaultValue={filterGenre}
+				>
+					<option value={[]}>All</option>
+					{genres.map((genre) => (
+					<option  key={genre} value={genre}>{genre}</option>
+					))}
+				</select>
 			</div>
 		</div>
-	);
-};
+	)};
+
+
 
 export default Genre;

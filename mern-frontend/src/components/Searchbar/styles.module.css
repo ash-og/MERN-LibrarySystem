@@ -38,6 +38,7 @@
 	flex: 2;
 	text-align: left;
 	margin-left: 20px;
+	margin-bottom: 0px;
 
 }
 
@@ -46,6 +47,16 @@
 	font-weight: 600;
 	color: var(--black);
 	flex: 1;
+	margin: 0px;
+}
+
+.icon_tab {
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--black);
+	flex: 0.5;
+	padding: 0px;
+	margin: 0px;
 }
 
 .book {
@@ -82,6 +93,15 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.icon_container {
+	flex: 0.5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0px;
+	padding: 1px;
 }
 
 .book_genre {
@@ -154,12 +174,14 @@
 	box-shadow: var(--box-shadow);
 	background-color: white;
 	border-radius: 4px;
+	padding: 10px;
 }
 
 .sort_by {
 	font-size: 16px;
 	font-weight: 500;
 	margin-top: 15px;
+	margin-right: 5px;
 }
 
 .select {
@@ -198,13 +220,26 @@
 /* Genre CSS */
 
 .containerGenre {
+	height: 60px;
 	margin: 10px;
-	align-items: flex-start;
-	padding: 10px 20px;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
 	box-shadow: var(--box-shadow);
 	background-color: white;
 	border-radius: 4px;
-	font-size: 14px;
+}
+
+.selectGenre {
+	width: 80px;
+	height: 30px;
+	border-radius: 4px;
+	border: 1px solid var(--black);
+	outline: none;
+	cursor: pointer;
+	padding-left: 10px;
+	/* padding-right: 15px; */
 }
 
 .headingGenre {

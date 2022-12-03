@@ -19,16 +19,17 @@ const Sort = ({ sort, setSort }) => {
 		<div className={styles.containerSort}>
 			<p className={styles.sort_by}>Sort By :</p>
 			<select
+				className="form-select form-select-sm" 
+				aria-label=".form-select-sm example"
 				onChange={onSelectChange}
-				className={styles.select}
 				defaultValue={sort.sort}
 			>
 				<option value="year">Year</option>
 				<option value="author">Author</option>
 			</select>
-			<button className={styles.arrow_btn} onClick={onArrowChange}>
-				<p className={styles.up_arrow}>&uarr;</p>
-				<p className={styles.down_arrow}>&darr;</p>
+			<button className="btn btn-outline-dark" onClick={onArrowChange}>
+				<i className="bi bi-arrow-down-up"></i>
+				<i className="bi bi-arrow-up-down"></i>
 			</button>
 		</div>
 	);

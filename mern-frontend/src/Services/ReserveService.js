@@ -11,7 +11,6 @@ const getReservations = ()=>{
             });
 }
 
-
 const ReserveService = {getReservations};
 
 export default ReserveService;
