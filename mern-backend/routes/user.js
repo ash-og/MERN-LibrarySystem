@@ -141,7 +141,26 @@ userRouter.post('/favourite/:id',passport.authenticate('jwt', {session : false})
     });
 });
 
-module.exports = userRouter;
+// userRouter.post('/favourite/:id',passport.authenticate('jwt', {session : false}), async (req, res)=>{
+//     let id = req.params.id
+//     const favourite = await Book.findById(id);
+//     // console.log(favourite._id);
+//     // console.log(req.user.favourites)
+//     // const existingFavourites = req.user.favourites;
+//     const existingFavourites = await User.findOne({id: req.user.id}).populate('favourites').exec();
+//     console.log(existingFavourites);
+//     if (existingFavourites !== null) {
+//         res.status(400).json({message : {msgBody : "Favourite already exists", msgError: true}});
+//     } else {
+//         req.user.favourites.push(favourite);
+//         req.user.save(err=>{
+//             if (err)
+//                 res.status(500).json({message : {msgBody : "Error has occurred", msgError : true}});
+//             else
+//                 res.status(200).json({message : {msgBody : "Successfully added favourite", msgError : false}});
+//         });
+//     }
+// });
 
 
 // Delete profile
@@ -158,3 +177,7 @@ userRouter.delete('/favourite/:id',passport.authenticate('jwt',{session : false}
             res.status(200).json({message : {msgBody : "Successfully removed favourite", msgError : false}});
     });
 });
+
+
+
+module.exports = userRouter;

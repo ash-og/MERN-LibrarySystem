@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Message from '../Message';
 import { useNavigate } from 'react-router-dom';
 
 const DeleteUser = () => {
@@ -20,7 +21,7 @@ const DeleteUser = () => {
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                setStatusMessage('Details updated');
+                setStatusMessage('User Deleted');
                 setShow(false);
                 navigate('/');
             });

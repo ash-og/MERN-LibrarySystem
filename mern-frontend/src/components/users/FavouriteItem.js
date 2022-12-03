@@ -1,10 +1,8 @@
 import React from 'react';
 import Col from 'react-bootstrap/esm/Col';
 import Row from 'react-bootstrap/esm/Row';
-import { useNavigate } from 'react-router-dom'; 
 
 const FavouriteItem = props =>{
-    const navigate = useNavigate();
 
     const handleRemove = (event, favourite) => {
         event.preventDefault();
