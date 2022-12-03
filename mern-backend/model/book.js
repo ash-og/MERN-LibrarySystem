@@ -7,7 +7,8 @@ const BookSchema = new Schema({
   author: {  type: String , required: true },
   genre: { type: String },
   publisher: { type: String },
-  year: { type: Number }
+  year: { type: Number },
+  copies: { type: Number },
 });
 
 // Export model

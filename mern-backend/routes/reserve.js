@@ -10,7 +10,7 @@ const Reservation = require('../model/Reservation');
 // View reservations
 
 reserveRouter.get('/view',passport.authenticate('jwt',{session : false}),(req,res)=>{
-    User.findById({_id : req.user._id}).populate('reservations').exec((err,document)=>{
+    User.findById({_id : req.user._id}).populate({path: 'reservations', populate: {path: 'book'}}).exec((err,document)=>{
         if(err)
             res.status(500).json({message : {msgBody : "Error has occured", msgError: true}});
         else{
@@ -19,6 +19,34 @@ reserveRouter.get('/view',passport.authenticate('jwt',{session : false}),(req,re
     });
 });
 
+// reserveRouter.get('/viewc',passport.authenticate('jwt',{session : false}), async (req,res)=>{
+
+//     try{
+//         const user = await req.user.populate('reservations').exec();
+//         console.log(user);
+//         res.status(200).json({user : user, authenticated : true});
+//     } catch(err) {
+//             res.status(500).json({message : {msgBody : "Error has occured", msgError: true}});
+//             }});
+
+// reserveRouter.get('/viewb',passport.authenticate('jwt',{session : false}), async (req,res)=>{
+
+//     try {
+//         const reservations = await Reservation.find({user : req.user._id})
+//         console.log(reservations);
+
+//         const books = 
+
+//         const response = {
+//             reservations,
+//         };
+
+//         res.status(200).json(response);
+
+//     } catch (err) {
+//         console.log(err);
+//         res.status(500).json({ error: true, message: "Internal Server Error" });
+//     }});
 
 // Make a new reservation
 

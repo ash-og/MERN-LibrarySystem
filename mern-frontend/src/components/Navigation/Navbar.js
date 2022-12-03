@@ -56,6 +56,11 @@ const Navbar = props =>{
                     <li className="nav-item nav-link">
                         My Profile
                     </li>
+                </Link>
+                <Link to="/reservations">
+                    <li className="nav-item nav-link">
+                        Reservations
+                    </li>
                 </Link> 
                 {
                     user.role === "admin" ? 
