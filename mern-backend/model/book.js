@@ -1,5 +1,3 @@
-// Modelled after Lab 4 & https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose#setting_up_the_mongodb_database
-
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -9,13 +7,8 @@ const BookSchema = new Schema({
   author: {  type: String , required: true },
   genre: { type: String },
   publisher: { type: String },
-  releasedate: { type: String }
-});
-
-// Virtual for book's URL
-BookSchema.virtual("url").get(function () {
-  // We don't use an arrow function as we'll need the this object
-  return `/catalog/book/${this._id}`;
+  year: { type: Number },
+  copies: { type: Number },
 });
 
 // Export model

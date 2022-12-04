@@ -4,13 +4,19 @@ const bcrypt = require('bcrypt');
 
 // Define a schema.
 var userSchema = new Schema({
-  username: { type: String, required: true },
-  email: { type: String, required: true },
-  password: { type: String, required: true },
-  favourites: [{type: mongoose.Schema.Types.ObjectId, ref: 'book'}]
-  // image: String,
-  // hash: String,
-  // salt: String
+  username: { type: String, required: true, min: 6, max: 15 },
+  email: { 
+    type: String, 
+    required: true, 
+    unique: true, 
+    match: [
+    /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+    "Please fill a valid email address",
+], },
+  password: { type: String, required: true, min: 6, max: 15 },
+  image: { type: String },
+  favourites: [{type: mongoose.Schema.Types.ObjectId, ref: 'Book'}],
+  reservations: [{type: mongoose.Schema.Types.ObjectId, ref: 'Reservation'}]
 }, {timestamps: true});
 
 

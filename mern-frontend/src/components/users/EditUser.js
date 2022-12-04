@@ -1,9 +1,17 @@
 import React, {useState} from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 // Returns editable inputs for the selected user 
 
-const EditUser = ({editUserId, setEditUserId, updateUserData, setUpdateUserData}) => {
+const EditUser = ({user, setUser, setEditing}) => {
     const [statusMessage, setStatusMessage] = useState('');
+    const [updateUserData, setUpdateUserData] = useState({
+        username: user.username,
+        email: user.email,
+        image: user.image
+    })
 
     const handleUpdateUserChange = (event) => {
         event.preventDefault();
@@ -14,6 +22,7 @@ const EditUser = ({editUserId, setEditUserId, updateUserData, setUpdateUserData}
 
         const newFormData = { ...updateUserData };
         newFormData[fieldName] = fieldValue
+        console.log(newFormData);
 
         setUpdateUserData(newFormData);
 
@@ -23,12 +32,13 @@ const EditUser = ({editUserId, setEditUserId, updateUserData, setUpdateUserData}
         event.preventDefault();
 
         const updatedUser = {
-            name: updateUserData.name,
-            age: updateUserData.age
+            username: updateUserData.username,
+            email: updateUserData.email,
+            image: updateUserData.image
         }
 
         try {
-            fetch(`http://localhost:3100/updateuser/${editUserId}`, {
+            fetch('/user/updateuser', {
                 method: "POST",
                 headers: {
                     'Content-Type': "application/json"
@@ -38,52 +48,102 @@ const EditUser = ({editUserId, setEditUserId, updateUserData, setUpdateUserData}
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
-                    setStatusMessage('User ' + updatedUser.name + ' updated');
+                    setStatusMessage('Details updated');
                 });
         } catch (err) {
             // Remediation logic
             setStatusMessage('There was an error creating the user');
         }
 
-        setEditUserId(null);
+        setUser(updatedUser);
+        setEditing(false);
     };
 
     const handleCancelClick = () => {
-        setEditUserId(null);
+        setEditing(false);
     };
 
     return (
-        <tr>
-            <td>
-                <input
-                    type="text"
-                    name="name"
-                    className="mt-1 w-full rounded-md border-gray-300 shadow-sm"
-                    placeholder=""
-                    value={updateUserData.name}
-                    onChange={handleUpdateUserChange}
-                />
-            </td>
-            <td>
-                <input
-                    type="text"
-                    name="age"
-                    className="mt-1 w-full rounded-xl border-gray-300 shadow-sm"
-                    placeholder=""
-                    value={updateUserData.age}
-                    onChange={handleUpdateUserChange}
-                />
-            </td>
-            <td>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit" onClick={handleEditFormSubmit}>
-                    Save
-                </button>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type='button' onClick={handleCancelClick}>Cancel</button>
-                <p className="text-red-900">
-                    { statusMessage }
-                </p>
-            </td>
-        </tr>
+        <Container>
+            <Row>
+                <Col>
+                    <div className="card" style={{ width: '18rem' }}>
+                        <input
+                            type="text"
+                            name="image"
+                            className="form-control"
+                            placeholder=""
+                            value={updateUserData.image}
+                            onChange={handleUpdateUserChange}
+                        />
+                    </div>
+                </Col>
+                <Col xs={6}>
+                    <div className="card" style={{width: '25rem'}}>
+                        <div className="card-body">
+                        <hr />
+                            <Row>
+                                <Col sm="9">
+                                    <p className="card-text" >Username </p>
+                                </Col>
+                                <Col>
+                                    <input
+                                        type="text"
+                                        name="username"
+                                        className="form-control"
+                                        placeholder=""
+                                        value={updateUserData.username}
+                                        onChange={handleUpdateUserChange}
+                                    />
+                                </Col>
+                            </Row>
+                            <hr />
+                            <Row>
+                                <Col sm="6">
+                                    <p className="card-text" >Email </p>
+                                </Col>
+                                <Col>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        className="form-control"
+                                        placeholder=""
+                                        value={updateUserData.email}
+                                        onChange={handleUpdateUserChange}
+                                    />
+                                </Col>
+                            </Row>
+                            <hr />
+                            <Row className="justify-content-md-center">
+                                <Col className="text-center">
+                                         <button className="btn btn-dark btn-md" type="submit" onClick={handleEditFormSubmit}>
+                                            Save
+                                        </button>
+                                        <button className="btn btn-dark btn-md" type='button' onClick={handleCancelClick}>Cancel</button>
+                                        <p className="text-red-900">
+                                            { statusMessage }
+                                        </p>
+                                </Col>
+                            </Row>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+      </Container>
+
+
+
+
+        //     <td>
+        //         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit" onClick={handleEditFormSubmit}>
+        //             Save
+        //         </button>
+        //         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type='button' onClick={handleCancelClick}>Cancel</button>
+        //         <p className="text-red-900">
+        //             { statusMessage }
+        //         </p>
+        //     </td>
+        // </tr>
 
     );
 };
