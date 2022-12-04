@@ -32,10 +32,9 @@
 }
 
 .title_tab {
-	font-size: 16px;
-	font-weight: 600;
+	font-size: large;
+	font-weight: bold;
 	color: var(--black);
-	flex: 2;
 	text-align: left;
 	margin-left: 20px;
 	margin-bottom: 0px;
@@ -43,16 +42,15 @@
 }
 
 .genre_tab {
-	font-size: 16px;
-	font-weight: 600;
+	font-size:large;
+	font-weight: bold;
 	color: var(--black);
-	flex: 1;
 	margin: 0px;
 }
 
 .icon_tab {
-	font-size: 16px;
-	font-weight: 600;
+	font-size: large;
+	font-weight: bold;
 	color: var(--black);
 	flex: 0.5;
 	padding: 0px;
@@ -62,7 +60,7 @@
 .book {
 	display: flex;
 	align-items: center;
-	height: 70px;
+	height:5em;
 	margin: 5px 10px;
 	padding-left: 20px;
 	box-shadow: var(--box-shadow);
@@ -107,19 +105,6 @@
 .book_genre {
 	font-size: 16px;
 	font-weight: 400;
-}
-
-.rating_container {
-	flex: 1;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.star_img {
-	width: 25px;
-	height: 25px;
-	margin-right: 4px;
 }
 
 
@@ -170,52 +155,24 @@
 	margin: 10px;
 	display: flex;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: space-between;
+	align-content: space-between;
 	box-shadow: var(--box-shadow);
 	background-color: white;
 	border-radius: 4px;
-	padding: 10px;
+	padding: 25px;
 }
 
 .sort_by {
 	font-size: 16px;
 	font-weight: 500;
 	margin-top: 15px;
-	margin-right: 5px;
+	margin-right: 15px;
 }
 
-.select {
-	width: 80px;
-	height: 30px;
-	border-radius: 4px;
-	border: 1px solid var(--black);
-	outline: none;
-	cursor: pointer;
-	padding-left: 5px;
+.btn-outline-dark {
+	margin-left: 200px;
 }
-
-.arrow_btn {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 30px;
-	width: 30px;
-	outline: none;
-	border: 1px solid var(--black);
-	margin-left: 5px;
-	padding-top: 15px;
-	border-radius: 4px;
-	background-color: transparent;
-	cursor: pointer;
-}
-
-.up_arrow,
-.down_arrow {
-	font-size: 18px;
-	font-weight: bold;
-	color: var(--black);
-}
-
 
 /* Genre CSS */
 

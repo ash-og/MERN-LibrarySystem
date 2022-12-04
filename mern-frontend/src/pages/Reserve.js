@@ -2,6 +2,7 @@ import React, {useState,useContext,useEffect} from 'react';
 import Message from '../components/Message';
 import ReserveService from '../Services/ReserveService';
 import ReservationItem from '../components/Reservations/ReservationItem';
+import Container from 'react-bootstrap/esm/Container';
 
 // Credit @ https://github.com/noobcoder1137/MERN-Stack-Authentication-Authorization-JWT/blob/master/client/src/Components/Reservations.js
 
@@ -16,8 +17,8 @@ const Reserve = props =>{
         });
     },[]);
 
-    return(
-        <div>
+    return(        
+        <Container>
                 {
                     reservations.map(reservation =>{
                         console.log(reservation)
@@ -26,7 +27,7 @@ const Reserve = props =>{
                 }
             <br/>
             {message ? <Message message={message}/> : null}
-        </div>
+        </Container>
     );
 
 }

@@ -3,8 +3,8 @@ import SearchBooks from "./components/Searchbar/SearchBooks";
 
 export default function Search() {
     return (
-        <h1>
+        <div>
             <SearchBooks />
-        </h1>
+        </div>
     )
 }

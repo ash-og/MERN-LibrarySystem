@@ -21,37 +21,7 @@ const Profile = props =>{
             setUser({username: data.username, email: data.email, image: data.image});
         });
     },[]);
-    
 
-    // const onSubmit = e =>{
-    //     e.preventDefault();
-    //     TodoService.postTodo(todo).then(data =>{
-    //         const { message } = data;
-    //         resetForm();
-    //         if(!message.msgError){
-    //             TodoService.getTodos().then(getData =>{
-    //                 setTodos(getData.todos);
-    //                 setMessage(message);
-    //             });
-    //         }
-    //         else if(message.msgBody === "UnAuthorized"){
-    //             setMessage(message);
-    //             authContext.setUser({username : "", role : ""});
-    //             authContext.setIsAuthenticated(false);
-    //         }
-    //         else{
-    //             setMessage(message);
-    //         }
-    //     });
-    // }
-
-    // const onChange = e =>{
-    //     setTodo({name : e.target.value});
-    // }
-
-    // const resetForm = ()=>{
-    //     setTodo({name : ""});
-    // }
 
     const handleEditToggle = (event) => {
         event.preventDefault();
@@ -59,7 +29,7 @@ const Profile = props =>{
     };
 
     return(      
-        <Container>
+        <Container className='containerProfile'>
             <Row>
                 <Col>
                     <br/>

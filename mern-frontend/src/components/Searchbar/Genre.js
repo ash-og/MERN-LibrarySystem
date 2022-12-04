@@ -12,10 +12,10 @@ const Genre = ({ genres, filterGenre, setFilterGenre }) => {
 			<p className={styles.sort_by}>Filter By Genre :</p>	
 			<div>
 				<select
-					className="form-select form-select-sm" 
+					className="form-select form-select-sm dropdown-ins" 
 					aria-label=".form-select-sm example"
 					onChange={onChange}
-					defaultValue={filterGenre}
+					defaultValue={{...genres}}
 				>
 					<option value={[]}>All</option>
 					{genres.map((genre) => (

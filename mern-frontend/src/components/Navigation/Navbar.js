@@ -79,7 +79,7 @@ const Navbar = props =>{
     return(
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <Link to="/">
-                <div className="navbar-brand">Bobo Tatty</div>
+                <div className="navbar-brand">Leighlin Library</div>
             </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>

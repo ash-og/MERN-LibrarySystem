@@ -60,7 +60,7 @@ const SearchBooks = () => {
                 <div className="head">
                     <input type="text" className={styles.search} placeholder="Search..." value={searchQuery} onChange={handleSearchQueryChange}>
                     </input>
-                    <div>
+                    <div className='col-4'>
 						<Sort sort={sort} setSort={(sort) => setSort(sort)} />
                     </div>
                     <div>

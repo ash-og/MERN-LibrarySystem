@@ -5,8 +5,8 @@ import SearchBooks from "../components/Searchbar/SearchBooks";
  const Home = () => {
     return (
         <div>
-            <h1>
-                Welcome to Bobo Library
+            <h1 className="display-3">
+                Welcome to Leighlin Library
             </h1>
             <SearchBooks />
         </div>

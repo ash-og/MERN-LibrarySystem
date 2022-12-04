@@ -1,4 +1,7 @@
 import styles from "./styles.module.css";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 // Credit @ https://www.youtube.com/watch?v=_i4Wi43NTDo
 
@@ -27,9 +30,8 @@ const Sort = ({ sort, setSort }) => {
 				<option value="year">Year</option>
 				<option value="author">Author</option>
 			</select>
-			<button className="btn btn-outline-dark" onClick={onArrowChange}>
+			<button className="btn btn-outline-secondary btn-sm" onClick={onArrowChange}>
 				<i className="bi bi-arrow-down-up"></i>
-				<i className="bi bi-arrow-up-down"></i>
 			</button>
 		</div>
 	);

@@ -1,3 +1,9 @@
+h1.display-3 {
+	margin: 10%;
+	text-align: center;
+}
+
+
 .wrapper {
 	width: 100%;
 	min-height: 100vh;
@@ -6,7 +12,7 @@
 	justify-content: center;
 }
 
-.container {
+.containerProfile {
 	width: 100%;
     min-height: 680px;
     padding: 20px;
