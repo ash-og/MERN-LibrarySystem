@@ -8,17 +8,10 @@ const ReservationItem = props =>{
         event.preventDefault();
 
 		let resId = reservation._id;
-        let bookId = {
-            id: reservation.book._id
-        };
 
 		try {
 			fetch(`/reserve/cancel/${resId}`,{
 				method : "DELETE",
-                headers: {
-                    'Content-Type': "application/json"
-                },
-                body: JSON.stringify(bookId)
 			}).then(response=>{
 				if(response.status !== 401){
 					return response.json().then(data => data);
