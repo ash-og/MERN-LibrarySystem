@@ -79,7 +79,7 @@ userRouter.get('/profile',passport.authenticate('jwt',{session : false}),(req,re
 
 userRouter.post('/updateuser',passport.authenticate('jwt',{session : false}),(req,res)=>{
 
-    let id = req.user._id
+    let id = req.user._id;
     let updatedUser = new User(req.body);
 
     User.findByIdAndUpdate(id,
@@ -94,6 +94,21 @@ userRouter.post('/updateuser',passport.authenticate('jwt',{session : false}),(re
                     res.status(200).json({message : {msgBody : "Successfully updated user details", msgError : false}});
                 }
             })  
+});
+
+// Update Password
+
+userRouter.post('/updatepassword',passport.authenticate('jwt',{session : false}),(req,res)=>{
+
+    // let password = req.body.password;
+    req.user.password = req.body.password;
+
+    req.user.save(err=>{
+        if (err)
+            res.status(500).json({message : {msgBody : "Error has occurred", msgError : true}});
+        else
+            res.status(200).json({message : {msgBody : "Successfully modified password", msgError : false}});
+    });
 });
 
 
@@ -140,27 +155,6 @@ userRouter.post('/favourite/:id',passport.authenticate('jwt', {session : false})
             res.status(200).json({message : {msgBody : "Successfully added favourite", msgError : false}});
     });
 });
-
-// userRouter.post('/favourite/:id',passport.authenticate('jwt', {session : false}), async (req, res)=>{
-//     let id = req.params.id
-//     const favourite = await Book.findById(id);
-//     // console.log(favourite._id);
-//     // console.log(req.user.favourites)
-//     // const existingFavourites = req.user.favourites;
-//     const existingFavourites = await User.findOne({id: req.user.id}).populate('favourites').exec();
-//     console.log(existingFavourites);
-//     if (existingFavourites !== null) {
-//         res.status(400).json({message : {msgBody : "Favourite already exists", msgError: true}});
-//     } else {
-//         req.user.favourites.push(favourite);
-//         req.user.save(err=>{
-//             if (err)
-//                 res.status(500).json({message : {msgBody : "Error has occurred", msgError : true}});
-//             else
-//                 res.status(200).json({message : {msgBody : "Successfully added favourite", msgError : false}});
-//         });
-//     }
-// });
 
 
 // Delete profile

@@ -61,15 +61,7 @@ const Navbar = props =>{
                     <li className="nav-item nav-link">
                         Reservations
                     </li>
-                </Link> 
-                {
-                    user.role === "admin" ? 
-                    <Link to="/admin">
-                        <li className="nav-item nav-link">
-                            Admin
-                        </li>
-                    </Link> : null
-                }  
+                </Link>  
                 <button type="button" 
                         className="btn btn-link nav-item nav-link" 
                         onClick={onClickLogoutHandler}>Logout</button>

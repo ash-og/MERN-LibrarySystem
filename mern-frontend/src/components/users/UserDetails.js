@@ -2,6 +2,7 @@ import React from "react";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import DeleteUser from "./DeleteUser";
+import ChangePassword from './ChangePassword';
 
 // Returns read only list of users with an edit button
 
@@ -40,8 +41,13 @@ const UserDetails = ({ user, handleEditToggle }) => {
                                     <button type="button" className="btn btn-dark btn-md" onClick={(event)=> handleEditToggle(event, user)}>Edit Details</button>
                                 </Col>
                                 <Col>
-                                    {/* <button type='button' className="btn btn-dark btn-md" >Delete Profile</button> */}
-                                    <DeleteUser />
+                                    <ChangePassword />
+                                </Col>
+                            </Row>
+                            <hr/>
+                            <Row className="justify-content-md-center">
+                                <Col className="text-center">
+                                    <DeleteUser />                                    
                                 </Col>
                             </Row>
                         </div>

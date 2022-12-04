@@ -8,6 +8,7 @@ import Favourites from '../components/users/Favourites';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import ChangePassword from '../components/users/ChangePassword';
 
 const Profile = props =>{
     const [ user, setUser ] = useState({username: "", email: "", image: ""});
@@ -50,7 +51,8 @@ const Profile = props =>{
                     handleEditToggle={handleEditToggle}
                     />
                 )}   
-            </Row>  
+            </Row>
+ 
             <br/>
             <br/>
             <Row>
