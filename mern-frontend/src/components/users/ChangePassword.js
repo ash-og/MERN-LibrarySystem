@@ -27,9 +27,10 @@ const ChangePassword = props => {
     setPassword(event.target.value);
   };
 
-  const handlePasswordSubmit = () => {
+  const handlePasswordSubmit = (event) => {
+    event.preventDefault();
 
-    let password = {
+    const newPassword = {
       password: password,
     }
 
@@ -39,12 +40,12 @@ const ChangePassword = props => {
           headers: {
               'Content-Type': "application/json"
           },
-          body: JSON.stringify(password)
+          body: JSON.stringify(newPassword)
         })
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                setStatusMessage('Password modified reserved');
+                setStatusMessage('Password modified');
                 setPassword('');
                 setShow(false);
                 navigate('/login');
