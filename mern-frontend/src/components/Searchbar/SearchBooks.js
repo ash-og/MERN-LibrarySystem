@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import axios from "axios";
 import styles from './styles.module.css';
 import "../../App.css";
-import Message from '../../components/Message';
 import Table from './Table';
 import Sort from './Sort';
 import Genre from './Genre';
@@ -14,7 +13,7 @@ const SearchBooks = () => {
     const [filterGenre, setFilterGenre] = useState([]);
 	const [page, setPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
+    const [setErrorMessage] = useState('');
 
     const base_url = `http://localhost:3100/books`
 
@@ -35,7 +34,7 @@ const SearchBooks = () => {
 		};
 
 		getAllBooks();
-	}, [sort, filterGenre, page, searchQuery]);
+	}, [sort, filterGenre, page, searchQuery, base_url, setErrorMessage]);
 
             
     const handleSearchQueryChange = (event) => {

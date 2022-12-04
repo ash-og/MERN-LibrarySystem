@@ -52,24 +52,24 @@ const Table = ({ books }) => {
 							{book.title} ({book.year})
 						</p>
 					</Col>
-                    <div className={styles.genre_container}>
+                    <Col className={styles.genre_container}>
 						{book.author}
-					</div>
-					<div className={styles.genre_container}>
+					</Col>
+					<Col className={styles.genre_container}>
 						{book.genre}
-					</div>
+					</Col>
 					{ !isAuthenticated ? 
 					null :	(
 					<>
-						<div className={styles.icon_container}>
+						<Col className={styles.icon_container}>
 							<button type="button" className="btn btn-outline-primary waves-effect px-2" onClick={(event)=> handleHeartClick(event, book)}><i className="bi bi-heart" aria-hidden="true"></i></button>
-						</div>
+						</Col>
 						{/* <div className={styles.icon_container}>
 							<button type="button" className="btn btn-outline-secondary waves-effect px-2"><i className="bi bi-clock" aria-hidden="true"></i></button>
 						</div>	 */}
-						<div className={styles.icon_container}>
+						<Col className={styles.icon_container}>
 							<NewReservation book={book} />
-						</div>
+						</Col>
 					</>				
 					)}
 				</Row>
