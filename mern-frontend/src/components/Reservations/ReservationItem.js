@@ -30,16 +30,16 @@ const ReservationItem = props =>{
         <>  
             <hr/>
             <Row>
-                <Col sm="6">
+                <Col sm="4">
                     <p className="card-text" >Book </p>
                 </Col>
-                <Col>
-                    <p className="card-text" >Pick-up Date </p>   
+                <Col sm="6">
+                    <p className="card-text text-muted">{props.reservation.book.title}</p>                    
                 </Col>
             </Row>
             <Row>
-                <Col sm="6">
-                    <p className="card-text text-muted">{props.reservation.book.title}</p>                    
+                <Col sm="4">
+                    <p className="card-text" >Pick-up Date </p>   
                 </Col>
                 <Col>
                     <p className="card-text text-muted">{props.reservation.date}</p>

@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Message from '../Message';
 import { useNavigate } from 'react-router-dom';
-import SearchBooks from '../Searchbar/SearchBooks';
 
 const NewReservation = props => {
   const [show, setShow] = useState(false);
@@ -20,7 +19,7 @@ const NewReservation = props => {
   useEffect(()=>{
     if (props.book.copies === 0)
       setIsAvailable(false);
-  })
+  },[props.book.copies])
 
   const handleClose = () => {
     setBookId('');

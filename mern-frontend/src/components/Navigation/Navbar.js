@@ -1,14 +1,16 @@
 import React, { useContext } from "react";
 import { useNavigate } from 'react-router-dom';
-import {Link} from 'react-router-dom';
 import AuthService from "../../Services/AuthService";
 import {AuthContext} from "../../Context/AuthContext";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 // Credit @ Bootstrap && https://www.youtube.com/watch?v=lvTAwTEwr2g
 
 
-const Navbar = props =>{
-    const {isAuthenticated,user,setIsAuthenticated,setUser} = useContext(AuthContext);
+const Navigationbar = props =>{
+    const {isAuthenticated,setIsAuthenticated,setUser} = useContext(AuthContext);
 
     const navigate = useNavigate();
     
@@ -25,21 +27,9 @@ const Navbar = props =>{
     const unauthenticatedNavBar = ()=>{
         return (
             <>
-                <Link to="/">
-                    <li className="nav-item nav-link">
-                        Home
-                    </li>
-                </Link>  
-                <Link to="/login">
-                    <li className="nav-item nav-link">
-                        Login
-                    </li>
-                </Link>  
-                <Link to="/register">
-                    <li className="nav-item nav-link">
-                        Register
-                    </li>
-                </Link>  
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/login">Login</Nav.Link>
+                <Nav.Link href="/register">Register</Nav.Link> 
             </>
         )
     }
@@ -47,43 +37,30 @@ const Navbar = props =>{
     const authenticatedNavBar = ()=>{
         return(
             <>
-                <Link to="/">
-                    <li className="nav-item nav-link">
-                        Home
-                    </li>
-                </Link> 
-                <Link to="/profile">
-                    <li className="nav-item nav-link">
-                        My Profile
-                    </li>
-                </Link>
-                <Link to="/reservations">
-                    <li className="nav-item nav-link">
-                        Reservations
-                    </li>
-                </Link>  
-                <button type="button" 
-                        className="btn btn-link nav-item nav-link" 
-                        onClick={onClickLogoutHandler}>Logout</button>
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/profile">My Profile</Nav.Link>
+                <Nav.Link href="/reservations">Reservations</Nav.Link>
+                <Nav.Item>
+                    <button type="button" 
+                            className="btn btn-link nav-item nav-link" 
+                            onClick={onClickLogoutHandler}>Logout</button>
+                </Nav.Item>
             </>
         )
     }
     return(
-        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-            <Link to="/">
-                <div className="navbar-brand">Leighlin Library</div>
-            </Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-            
-            <div className="collapse navbar-collapse" id="navbarText">
-                <ul className="navbar-nav mr-auto">
-                    { !isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
-                </ul>
-            </div>
-        </nav>
+        <Navbar bg="primary" variant="dark" expand="lg">
+            <Container>
+                <Navbar.Brand href="/">LB Library</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        { !isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
     )
 }
 
-export default Navbar;
+export default Navigationbar;
